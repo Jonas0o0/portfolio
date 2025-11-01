@@ -1,103 +1,172 @@
-import Image from "next/image";
+'use client';
+
+import {Menu, X, Github, Linkedin, Mail, Code2, Sparkles, Rocket, Zap, Heart, Star, Coffee} from 'lucide-react';
+import gsap from "gsap";
+import {useGSAP} from "@gsap/react";
+import {ScrollTrigger} from "gsap/ScrollTrigger";
 
 export default function Home() {
-  return (
-    <div className="font-sans grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20">
-      <main className="flex flex-col gap-[32px] row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="font-mono list-inside list-decimal text-sm/6 text-center sm:text-left">
-          <li className="mb-2 tracking-[-.01em]">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] font-mono font-semibold px-1 py-0.5 rounded">
-              src/app/page.tsx
-            </code>
-            .
-          </li>
-          <li className="tracking-[-.01em]">
-            Save and see your changes instantly.
-          </li>
-        </ol>
+    useGSAP(() => {
+        gsap.registerPlugin(ScrollTrigger);
+    }, [])
+    return (
+        <main className=" text-lg bg-gradient-to-br from-pink-50 via-purple-50 to-blue-50 text-gray-900 min-h-screen">
+            <nav>
+                <ul>
 
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:w-auto"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 w-full sm:w-auto md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
-        </div>
-      </main>
-      <footer className="row-start-3 flex gap-[24px] flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
-    </div>
-  );
+                </ul>
+            </nav>
+            <header className="flex items-center justify-center h-screen w-full">
+                <div className="">
+                    <a href="mailto:jonas.facon@proton.me"
+                        className="hero-badge inline-flex items-center gap-2 px-5 py-2 bg-gradient-to-r from-pink-100 to-purple-100 rounded-full text-pink-600 font-semibold mb-4 shadow-lg">
+                        <Sparkles size={20}/>
+                        <span>Disponible pour de nouveaux projets</span>
+                    </a>
+                    <h1 className="font-extrabold text-8xl">Jonas Facon</h1>
+                    <p className="w-[600px]">
+                        Actuellement étudiant en 2ᵉ année de BUT Informatique, à la recherche d’un stage de 10 semaines.
+                    </p>
+
+                    <a href="https://cv.jonas-facon.dev"
+                        className="w-full text-xl p-20 mt-8 inline-flex items-center justify-center border align-middle select-none font-sans font-medium text-center px-4 py-2 text-black text-sm font-medium rounded-full bg-white/2.5 border border-white/50 backdrop-blur-sm shadow-[inset_0_1px_0px_rgba(255,255,255,0.75),0_0_9px_rgba(0,0,0,0.2),0_3px_8px_rgba(0,0,0,0.15)] hover:bg-white/30 transition-all duration-300 before:absolute before:inset-0 before:rounded-lg before:bg-gradient-to-br before:from-white/60 before:via-transparent before:to-transparent before:opacity-70 before:pointer-events-none after:absolute after:inset-0 after:rounded-lg after:bg-gradient-to-tl after:from-white/30 after:via-transparent after:to-transparent after:opacity-50 after:pointer-events-none transition antialiased">
+                        Télécharger mon CV
+                    </a>
+
+                </div>
+                <div className="w-[10%]"></div>
+                <div className="relative w-[20%]">
+                    <img className="h-[100%] w-[100%] rounded-full" src="/images/portrait.jpg"/>
+                    <a href="https://www.linkedin.com/in/jonas-facon/" className="absolute -left-1 bottom-14 h-[60px] w-[60px] mt-2 inline-flex items-center justify-center border align-middle select-none font-sans font-medium text-center px-4 py-2 text-black text-sm font-medium rounded-full bg-white/2.5 border border-white/50 backdrop-blur-sm shadow-[inset_0_1px_0px_rgba(255,255,255,0.75),0_0_9px_rgba(0,0,0,0.2),0_3px_8px_rgba(0,0,0,0.15)] hover:bg-white/30 transition-all duration-300 before:absolute before:inset-0 before:rounded-full before:bg-gradient-to-br before:from-white/60 before:via-transparent before:to-transparent before:opacity-70 before:pointer-events-none after:absolute after:inset-0 after:rounded-full after:bg-gradient-to-tl after:from-white/30 after:via-transparent after:to-transparent after:opacity-50 after:pointer-events-none transition antialiased">
+                        <Linkedin/>
+                    </a>
+                    <a href="mailto:jonas.facon@proton.me" className="absolute left-5 bottom-5 h-[60px] w-[60px] mt-2 inline-flex items-center justify-center border align-middle select-none font-sans font-medium text-center px-4 py-2 text-black text-sm font-medium rounded-full bg-white/2.5 border border-white/50 backdrop-blur-sm shadow-[inset_0_1px_0px_rgba(255,255,255,0.75),0_0_9px_rgba(0,0,0,0.2),0_3px_8px_rgba(0,0,0,0.15)] hover:bg-white/30 transition-all duration-300 before:absolute before:inset-0 before:rounded-full before:bg-gradient-to-br before:from-white/60 before:via-transparent before:to-transparent before:opacity-70 before:pointer-events-none after:absolute after:inset-0 after:rounded-full after:bg-gradient-to-tl after:from-white/30 after:via-transparent after:to-transparent after:opacity-50 after:pointer-events-none transition antialiased">
+                        <Mail/>
+                    </a>
+                    <a href="https://github.com/Jonas0o0" className="absolute left-[60px] bottom-0 h-[60px] w-[60px] mt-2 inline-flex items-center justify-center border align-middle select-none font-sans font-medium text-center px-4 py-2 text-black text-sm font-medium rounded-full bg-white/2.5 border border-white/50 backdrop-blur-sm shadow-[inset_0_1px_0px_rgba(255,255,255,0.75),0_0_9px_rgba(0,0,0,0.2),0_3px_8px_rgba(0,0,0,0.15)] hover:bg-white/30 transition-all duration-300 before:absolute before:inset-0 before:rounded-full before:bg-gradient-to-br before:from-white/60 before:via-transparent before:to-transparent before:opacity-70 before:pointer-events-none after:absolute after:inset-0 after:rounded-full after:bg-gradient-to-tl after:from-white/30 after:via-transparent after:to-transparent after:opacity-50 after:pointer-events-none transition antialiased">
+                        <Github/>
+                    </a>
+                </div>
+            </header>
+            <section className=" min-h-screen flex-col justify-center items-center p-20">
+                <h1 className="mb-20 font-extrabold text-5xl italic text-center">A Propos</h1>
+                <section className="flex justify-around items-center">
+                    <img className="h-[600px] w-[600px] rounded-full" src="/images/portrait.jpg"/>
+                    <div className="w-4xl">
+                        <p>
+                        <h4 className="pt-4 pb-4">Construire les algorithmes de demain</h4>
+
+                            Étudiant en 2ème année de BUT Informatique, je suis de ceux qui touchent à tout. Lego, couture, dessin, peinture... j'ai toujours eu besoin d'explorer, de créer, de comprendre comment les choses fonctionnent. Aujourd'hui, ce sont l'intelligence artificielle, la crypto et la finance qui captent mon attention.
+
+                        <h4 className="pt-4 pb-4">Ce qui me drive</h4>
+
+                            J'explore le fonctionnement de l'IA et de la blockchain à la recherche de possibilités pour créer les services du futur. Pas de grandes déclarations — je préfère creuser, expérimenter et comprendre réellement ce qui se passe. Ma curiosité pour la finance me pousse à voir au-delà du code : je m'intéresse aux <strong>pourquoi</strong> autant qu'aux <strong>comment</strong>.
+
+                        <h4 className="pt-4" pb-4>Mon approche</h4>
+
+                            Ma force ? <strong>Je ne me limite pas à une seule discipline.</strong> Cette habitude de toucher à tout me donne une vision différente des projets. Là où certains voient des technologies séparées, je vois des possibilités de les combiner. Ma créativité et mes connaissances en finance me permettent d'aborder les problèmes sous un autre angle et ainsi de nouvelles idées intéressantes peuvent naître.<br/>
+                            <br/>
+                            Je ne prétends pas révolutionner le monde, mais j'essaie sincèrement de comprendre où va la tech et comment y contribuer.
+
+                        <h4 className="pt-4 pb-4">Vers où je vais</h4>
+
+                            Mon objectif à long terme ? Contribuer à la recherche en IA ou dans l'écosystème crypto. Mais pour l'instant, je cherche un <strong>stage de 10 semaines</strong> pour avril où mettre mes compétences au service de projets concrets, apprendre auprès de gens qui savent, et continuer à nourrir ma curiosité.<br/>
+                            <br/>
+                            <strong>Une question ? Un projet ?</strong> N'hésitez pas à me contacter.
+                        </p>
+                    </div>
+                </section>
+            </section>
+            <section className="min-h-screen flex-col items-center justify-start w-full p-50">
+                <h1 className="mb-20 font-extrabold text-5xl italic">Compétences</h1>
+                <section className="flex justify-center mt-2">
+                    <div className="flex justify-end items-start w-[550px]">
+                        <h2 className="font-extrabold text-3xl">LANGAGES DE PROGRAMMATION</h2>
+                    </div>
+                    <div className="flex flex-wrap w-[800px]">
+                        <div className="mb-8 text-xl p-20 ml-8 inline-flex items-center justify-around border align-middle select-none font-sans font-medium text-center px-4 py-2 text-black text-sm font-medium rounded-xl bg-white/2.5 border border-white/50 backdrop-blur-sm shadow-[inset_0_1px_0px_rgba(255,255,255,0.75),0_0_9px_rgba(0,0,0,0.2),0_3px_8px_rgba(0,0,0,0.15)] hover:bg-white/30 transition-all duration-300 before:absolute before:inset-0 before:rounded-lg before:bg-gradient-to-br before:from-white/60 before:via-transparent before:to-transparent before:opacity-70 before:pointer-events-none after:absolute after:inset-0 after:rounded-xl after:bg-gradient-to-tl after:from-white/30 after:via-transparent after:to-transparent after:opacity-50 after:pointer-events-none transition antialiased">
+                            <img width="40" height="40" src="/logos/java-icon.svg"/>
+                            <span className="text-xl mx-3">Java</span>
+                        </div>
+                        <div className="mb-8 text-xl p-20 ml-8 inline-flex items-center justify-around border align-middle select-none font-sans font-medium text-center px-4 py-2 text-black text-sm font-medium rounded-xl bg-white/2.5 border border-white/50 backdrop-blur-sm shadow-[inset_0_1px_0px_rgba(255,255,255,0.75),0_0_9px_rgba(0,0,0,0.2),0_3px_8px_rgba(0,0,0,0.15)] hover:bg-white/30 transition-all duration-300 before:absolute before:inset-0 before:rounded-lg before:bg-gradient-to-br before:from-white/60 before:via-transparent before:to-transparent before:opacity-70 before:pointer-events-none after:absolute after:inset-0 after:rounded-xl after:bg-gradient-to-tl after:from-white/30 after:via-transparent after:to-transparent after:opacity-50 after:pointer-events-none transition antialiased">
+                            <img width="40" height="40" src="/logos/python-logo-only.svg"/>
+                            <span className="text-xl mx-3">Python</span>
+                        </div>
+                        <div className="mb-8 text-xl p-20 ml-8 inline-flex items-center justify-around border align-middle select-none font-sans font-medium text-center px-4 py-2 text-black text-sm font-medium rounded-xl bg-white/2.5 border border-white/50 backdrop-blur-sm shadow-[inset_0_1px_0px_rgba(255,255,255,0.75),0_0_9px_rgba(0,0,0,0.2),0_3px_8px_rgba(0,0,0,0.15)] hover:bg-white/30 transition-all duration-300 before:absolute before:inset-0 before:rounded-lg before:bg-gradient-to-br before:from-white/60 before:via-transparent before:to-transparent before:opacity-70 before:pointer-events-none after:absolute after:inset-0 after:rounded-xl after:bg-gradient-to-tl after:from-white/30 after:via-transparent after:to-transparent after:opacity-50 after:pointer-events-none transition antialiased">
+                            <img width="40" height="40" src="/logos/C_Programming_Language.svg/"/>
+                            <span className="text-xl mx-3">C</span>
+                        </div>
+                    </div>
+                </section>
+                <section className="flex justify-center mt-2">
+                    <div className="flex justify-end items-start w-[550px]">
+                        <h2 className="font-extrabold text-3xl">DÉVELOPPEMENT WEB</h2>
+                    </div>
+
+                    <div className="flex flex-wrap w-[800px]">
+                        <div className="mb-8 text-xl p-20 ml-8 inline-flex items-center justify-around border align-middle select-none font-sans font-medium text-center px-4 py-2 text-black text-sm font-medium rounded-xl bg-white/2.5 border border-white/50 backdrop-blur-sm shadow-[inset_0_1px_0px_rgba(255,255,255,0.75),0_0_9px_rgba(0,0,0,0.2),0_3px_8px_rgba(0,0,0,0.15)] hover:bg-white/30 transition-all duration-300 before:absolute before:inset-0 before:rounded-lg before:bg-gradient-to-br before:from-white/60 before:via-transparent before:to-transparent before:opacity-70 before:pointer-events-none after:absolute after:inset-0 after:rounded-xl after:bg-gradient-to-tl after:from-white/30 after:via-transparent after:to-transparent after:opacity-50 after:pointer-events-none transition antialiased">
+                            <img width="40" height="40" src="/logos/HTML5-Logo.svg"/>
+                            <span className="text-xl mx-3">HTML</span>
+                        </div>
+                        <div className="mb-8 text-xl p-20 ml-8 inline-flex items-center justify-around border align-middle select-none font-sans font-medium text-center px-4 py-2 text-black text-sm font-medium rounded-xl bg-white/2.5 border border-white/50 backdrop-blur-sm shadow-[inset_0_1px_0px_rgba(255,255,255,0.75),0_0_9px_rgba(0,0,0,0.2),0_3px_8px_rgba(0,0,0,0.15)] hover:bg-white/30 transition-all duration-300 before:absolute before:inset-0 before:rounded-lg before:bg-gradient-to-br before:from-white/60 before:via-transparent before:to-transparent before:opacity-70 before:pointer-events-none after:absolute after:inset-0 after:rounded-xl after:bg-gradient-to-tl after:from-white/30 after:via-transparent after:to-transparent after:opacity-50 after:pointer-events-none transition antialiased">
+                            <img width="40" height="40" src="/logos/w3_css-official.svg"/>
+                            <span className="text-xl mx-3">CSS</span>
+                        </div>
+                        <div className="mb-8 text-xl p-20 ml-8 inline-flex items-center justify-around border align-middle select-none font-sans font-medium text-center px-4 py-2 text-black text-sm font-medium rounded-xl bg-white/2.5 border border-white/50 backdrop-blur-sm shadow-[inset_0_1px_0px_rgba(255,255,255,0.75),0_0_9px_rgba(0,0,0,0.2),0_3px_8px_rgba(0,0,0,0.15)] hover:bg-white/30 transition-all duration-300 before:absolute before:inset-0 before:rounded-lg before:bg-gradient-to-br before:from-white/60 before:via-transparent before:to-transparent before:opacity-70 before:pointer-events-none after:absolute after:inset-0 after:rounded-xl after:bg-gradient-to-tl after:from-white/30 after:via-transparent after:to-transparent after:opacity-50 after:pointer-events-none transition antialiased">
+                            <img width="40" height="40" src="/logos/javascript-seeklogo.png"/>
+                            <span className="text-xl mx-3">JS</span>
+                        </div>
+                        <div className="mb-8 text-xl p-20 ml-8 inline-flex items-center justify-around border align-middle select-none font-sans font-medium text-center px-4 py-2 text-black text-sm font-medium rounded-xl bg-white/2.5 border border-white/50 backdrop-blur-sm shadow-[inset_0_1px_0px_rgba(255,255,255,0.75),0_0_9px_rgba(0,0,0,0.2),0_3px_8px_rgba(0,0,0,0.15)] hover:bg-white/30 transition-all duration-300 before:absolute before:inset-0 before:rounded-lg before:bg-gradient-to-br before:from-white/60 before:via-transparent before:to-transparent before:opacity-70 before:pointer-events-none after:absolute after:inset-0 after:rounded-xl after:bg-gradient-to-tl after:from-white/30 after:via-transparent after:to-transparent after:opacity-50 after:pointer-events-none transition antialiased">
+                            <img width="40" height="40" src="/logos/React-Logo.svg"/>
+                            <span className="text-xl mx-3">Réact</span>
+                        </div>
+                        <div className="mb-8 text-xl p-20 ml-8 inline-flex items-center justify-around border align-middle select-none font-sans font-medium text-center px-4 py-2 text-black text-sm font-medium rounded-xl bg-white/2.5 border border-white/50 backdrop-blur-sm shadow-[inset_0_1px_0px_rgba(255,255,255,0.75),0_0_9px_rgba(0,0,0,0.2),0_3px_8px_rgba(0,0,0,0.15)] hover:bg-white/30 transition-all duration-300 before:absolute before:inset-0 before:rounded-lg before:bg-gradient-to-br before:from-white/60 before:via-transparent before:to-transparent before:opacity-70 before:pointer-events-none after:absolute after:inset-0 after:rounded-xl after:bg-gradient-to-tl after:from-white/30 after:via-transparent after:to-transparent after:opacity-50 after:pointer-events-none transition antialiased">
+                            <img width="40" height="40" src="/logos/nextjs-icon-svgrepo-com.svg"/>
+                            <span className="text-xl mx-3">Next.js</span>
+                        </div>
+                    </div>
+                </section>
+                <section className="flex justify-center mt-2">
+                    <div className="flex justify-end items-start w-[550px]">
+                        <h2 className="font-extrabold text-3xl">BASE DE DONNÉES</h2>
+                    </div>
+                    <div className="flex flex-wrap w-[800px]">
+                        <div className="mb-8 text-xl p-20 ml-8 inline-flex items-center justify-around border align-middle select-none font-sans font-medium text-center px-4 py-2 text-black text-sm font-medium rounded-xl bg-white/2.5 border border-white/50 backdrop-blur-sm shadow-[inset_0_1px_0px_rgba(255,255,255,0.75),0_0_9px_rgba(0,0,0,0.2),0_3px_8px_rgba(0,0,0,0.15)] hover:bg-white/30 transition-all duration-300 before:absolute before:inset-0 before:rounded-lg before:bg-gradient-to-br before:from-white/60 before:via-transparent before:to-transparent before:opacity-70 before:pointer-events-none after:absolute after:inset-0 after:rounded-xl after:bg-gradient-to-tl after:from-white/30 after:via-transparent after:to-transparent after:opacity-50 after:pointer-events-none transition antialiased">
+                            <img width="40" height="40" src="/logos/PostgreSQL_logo.3colors.svg"/>
+                            <span className="text-xl mx-3">Postgresql</span>
+                        </div>
+                        <div className="mb-8 text-xl p-20 ml-8 inline-flex items-center justify-around border align-middle select-none font-sans font-medium text-center px-4 py-2 text-black text-sm font-medium rounded-xl bg-white/2.5 border border-white/50 backdrop-blur-sm shadow-[inset_0_1px_0px_rgba(255,255,255,0.75),0_0_9px_rgba(0,0,0,0.2),0_3px_8px_rgba(0,0,0,0.15)] hover:bg-white/30 transition-all duration-300 before:absolute before:inset-0 before:rounded-lg before:bg-gradient-to-br before:from-white/60 before:via-transparent before:to-transparent before:opacity-70 before:pointer-events-none after:absolute after:inset-0 after:rounded-xl after:bg-gradient-to-tl after:from-white/30 after:via-transparent after:to-transparent after:opacity-50 after:pointer-events-none transition antialiased">
+                            <img width="40" height="40" src="/logos/java-icon.svg"/>
+                            <span className="text-xl mx-3">JDBC</span>
+                        </div>
+                        <div className="mb-8 text-xl p-20 ml-8 inline-flex items-center justify-around border align-middle select-none font-sans font-medium text-center px-4 py-2 text-black text-sm font-medium rounded-xl bg-white/2.5 border border-white/50 backdrop-blur-sm shadow-[inset_0_1px_0px_rgba(255,255,255,0.75),0_0_9px_rgba(0,0,0,0.2),0_3px_8px_rgba(0,0,0,0.15)] hover:bg-white/30 transition-all duration-300 before:absolute before:inset-0 before:rounded-lg before:bg-gradient-to-br before:from-white/60 before:via-transparent before:to-transparent before:opacity-70 before:pointer-events-none after:absolute after:inset-0 after:rounded-xl after:bg-gradient-to-tl after:from-white/30 after:via-transparent after:to-transparent after:opacity-50 after:pointer-events-none transition antialiased">
+                            <img width="40" height="40" src="/logos/sqlitebrowser.png/"/>
+                            <span className="text-xl mx-3">SQL</span>
+                        </div>
+                    </div>
+                </section>
+                <section className="flex justify-center mt-2">
+                    <div className="flex justify-end items-start w-[550px]">
+                        <h2 className="font-extrabold text-3xl">OUTILS ET ENVORONNEMENTS</h2>
+                    </div>
+                    <div className="flex flex-wrap w-[800px]">
+                        <div className="mb-8 text-xl p-20 ml-8 inline-flex items-center justify-around border align-middle select-none font-sans font-medium text-center px-4 py-2 text-black text-sm font-medium rounded-xl bg-white/2.5 border border-white/50 backdrop-blur-sm shadow-[inset_0_1px_0px_rgba(255,255,255,0.75),0_0_9px_rgba(0,0,0,0.2),0_3px_8px_rgba(0,0,0,0.15)] hover:bg-white/30 transition-all duration-300 before:absolute before:inset-0 before:rounded-lg before:bg-gradient-to-br before:from-white/60 before:via-transparent before:to-transparent before:opacity-70 before:pointer-events-none after:absolute after:inset-0 after:rounded-xl after:bg-gradient-to-tl after:from-white/30 after:via-transparent after:to-transparent after:opacity-50 after:pointer-events-none transition antialiased">
+                            <img width="40" height="40" src="/logos/Git-Icon-1788C.svg"/>
+                            <span className="text-xl mx-3">GIT</span>
+                        </div>
+                        <div className="mb-8 text-xl p-20 ml-8 inline-flex items-center justify-around border align-middle select-none font-sans font-medium text-center px-4 py-2 text-black text-sm font-medium rounded-xl bg-white/2.5 border border-white/50 backdrop-blur-sm shadow-[inset_0_1px_0px_rgba(255,255,255,0.75),0_0_9px_rgba(0,0,0,0.2),0_3px_8px_rgba(0,0,0,0.15)] hover:bg-white/30 transition-all duration-300 before:absolute before:inset-0 before:rounded-lg before:bg-gradient-to-br before:from-white/60 before:via-transparent before:to-transparent before:opacity-70 before:pointer-events-none after:absolute after:inset-0 after:rounded-xl after:bg-gradient-to-tl after:from-white/30 after:via-transparent after:to-transparent after:opacity-50 after:pointer-events-none transition antialiased">
+                            <img width="40" height="40" src="/logos/docker-mark-blue.svg"/>
+                            <span className="text-xl mx-3">Docker</span>
+                        </div>
+                        <div className="mb-8 text-xl p-20 ml-8 inline-flex items-center justify-around border align-middle select-none font-sans font-medium text-center px-4 py-2 text-black text-sm font-medium rounded-xl bg-white/2.5 border border-white/50 backdrop-blur-sm shadow-[inset_0_1px_0px_rgba(255,255,255,0.75),0_0_9px_rgba(0,0,0,0.2),0_3px_8px_rgba(0,0,0,0.15)] hover:bg-white/30 transition-all duration-300 before:absolute before:inset-0 before:rounded-lg before:bg-gradient-to-br before:from-white/60 before:via-transparent before:to-transparent before:opacity-70 before:pointer-events-none after:absolute after:inset-0 after:rounded-xl after:bg-gradient-to-tl after:from-white/30 after:via-transparent after:to-transparent after:opacity-50 after:pointer-events-none transition antialiased">
+                            <img width="40" height="40" src="/logos/dokploy.svg"/>
+                            <span className="text-xl mx-3">Dockploy</span>
+                        </div>
+                    </div>
+                </section>
+            </section>
+
+
+        </main>
+    );
 }
