@@ -21,6 +21,8 @@ import {useGSAP} from "@gsap/react";
 import {ScrollTrigger} from "gsap/ScrollTrigger";
 import Experience from "@/components/Experience";
 import Footer from "@/components/Footer";
+import {Nabla} from "next/dist/compiled/@next/font/dist/google";
+import Navbar from "@/components/Navbar";
 
 export default function Home() {
     useGSAP(() => {
@@ -28,11 +30,7 @@ export default function Home() {
     }, [])
     return (
         <main className=" text-lg bg-gradient-to-br from-pink-50 via-purple-50 to-blue-50 text-gray-900 min-h-screen">
-            <nav>
-                <ul>
-
-                </ul>
-            </nav>
+            <Navbar/>
             <header className="flex items-center justify-center h-screen w-full">
                 <div className="">
                     <a href="mailto:jonas.facon@proton.me"
