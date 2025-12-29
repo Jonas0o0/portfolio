@@ -36,7 +36,6 @@ export default function RootLayout({
     <html lang="fr" className={htmlClass}>
       <body>
         {children}
-        <Footer />
       </body>
     </html>
   );

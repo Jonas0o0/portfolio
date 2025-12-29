@@ -20,6 +20,7 @@ import gsap from "gsap";
 import {useGSAP} from "@gsap/react";
 import {ScrollTrigger} from "gsap/ScrollTrigger";
 import Experience from "@/components/Experience";
+import Footer from "@/components/Footer";
 
 export default function Home() {
     useGSAP(() => {
@@ -224,6 +225,7 @@ export default function Home() {
                     </div>
                 </div>
             </section>
+            <Footer />
         </main>
     );
 }
