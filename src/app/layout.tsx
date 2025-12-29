@@ -22,6 +22,8 @@ export const metadata: Metadata = {
     },
 };
 
+import Footer from "@/components/Footer";
+
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -34,6 +36,7 @@ export default function RootLayout({
     <html lang="fr" className={htmlClass}>
       <body>
         {children}
+        <Footer />
       </body>
     </html>
   );
