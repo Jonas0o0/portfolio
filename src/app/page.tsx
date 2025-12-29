@@ -19,6 +19,7 @@ import {
 import gsap from "gsap";
 import {useGSAP} from "@gsap/react";
 import {ScrollTrigger} from "gsap/ScrollTrigger";
+import Experience from "@/components/Experience";
 
 export default function Home() {
     useGSAP(() => {
@@ -180,6 +181,8 @@ export default function Home() {
                     </div>
                 </section>
             </section>
+
+            <Experience/>
             <section className="min-h-screen p-20">
                 <h1 className="mb-20 font-extrabold text-5xl italic text-center">Études</h1>
                 <div className="flex flex-col items-center gap-12">
