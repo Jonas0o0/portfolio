@@ -42,6 +42,7 @@ p, li, span {
 .underline-from-left {
     position: relative;
     display: inline-block; /* Ensure it wraps content */
+    padding: 0 4px; /* Add padding to the text container */
 }
 
 .underline-from-left::after {
@@ -49,12 +50,12 @@ p, li, span {
     position: absolute;
     width: 0;
     height: 1px; /* Underline thickness */
-    bottom: 11px; /* Adjust vertical position */
-    left: 20%; /* Adjust horizontal starting position */
+    bottom: 4px; /* Adjust vertical position */
+    left: 0; /* Start from the left of the text container */
     background-color: var(--foreground); /* Use foreground color for underline */
     transition: width 0.3s ease-out;
 }
 
 .underline-from-left:hover::after {
-    width: 70%; /* Adjust horizontal extent on hover */
+    width: 100%; /* Span the full width of the text container on hover */
 }
