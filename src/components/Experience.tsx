@@ -43,8 +43,8 @@ const projects = [
   },
   {
     "name": "cooffe-machine",
-    "description": "Le but de ce projet est de réaliser une machine à café en utilisant le langage Java et des outils de test et de build. Ce projet est réalisé en pair-programming.",
-    "language": "Java",
+    "description": "Configuration emacs et I3 pour donner envie à des personnes sans temps à perdre de mettre un pied dans notre workflow",
+    "language": "Shell",
     "html_url": "https://github.com/EvanDelepine/coffee-machine",
     "stargazers_count": 1,
     "category": "perso"
