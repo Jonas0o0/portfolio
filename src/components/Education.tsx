@@ -13,8 +13,11 @@ const Education = () => {
                         <Award size={40} className="text-purple-600"/>
                         <div>
                             <h2 className="font-bold text-2xl">BUT Informatique</h2>
-                            <h3 className="font-semibold text-xl text-gray-800">IUT de Lille - Université de
-                                Lille</h3>
+                            <div className="flex items-center gap-4">
+                                <img src="/logos/univ.jpeg" alt="Université de Lille" className="h-10"/>
+                                <h3 className="font-semibold text-xl text-gray-800">IUT de Lille - Université de
+                                    Lille</h3>
+                            </div>
                             <p className="text-sm text-gray-500">Depuis 2024</p>
                             <p className="mt-4">
                                 Formation axée sur la pratique avec des matières comme :
@@ -30,8 +33,11 @@ const Education = () => {
                         <GraduationCap size={40} className="text-purple-600"/>
                         <div>
                             <h2 className="font-bold text-2xl">Baccalauréat Général - Mention Bien</h2>
-                            <h3 className="font-semibold text-xl text-gray-800">Lycée Gustave Eiffel,
-                                Armentières</h3>
+                            <div className="flex items-center gap-4">
+                                <img src="/logos/lycee.png" alt="Lycée Gustave Eiffel" className="h-10"/>
+                                <h3 className="font-semibold text-xl text-gray-800">Lycée Gustave Eiffel,
+                                    Armentières</h3>
+                            </div>
                             <p className="text-sm text-gray-500">2021 - 2024</p>
                             <p className="mt-4">
                                 Spécialités : Mathématiques et Numérique et Sciences Informatiques (NSI).
