@@ -63,7 +63,7 @@ const Skills = () => {
             </section>
             <section className="flex justify-center mt-2">
                 <div className="flex justify-end items-start w-[550px]">
-                    <h2 className="font-extrabold text-3xl">OUTILS ET ENVORONNEMENTS</h2>
+                    <h2 className="font-extrabold text-3xl">OUTILS ET ENVIRONNEMENTS</h2>
                 </div>
                 <div className="flex flex-wrap w-[800px]">
                     {skills.tools.map((skill) => (
