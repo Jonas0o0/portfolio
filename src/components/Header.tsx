@@ -26,17 +26,15 @@ const Header = () => {
 
   return (
     <header id="home" className="relative min-h-screen flex items-center justify-center overflow-hidden px-6 pt-20">
-      {/* Organic Background Blob - Positioned subtly in the background */}
-      <div className="absolute inset-0 z-0">
-        <Hero3D />
-      </div>
+      {/* 3D Organic Cluster Background */}
+      <Hero3D />
 
-      <div className="max-w-7xl w-full grid grid-cols-1 lg:grid-cols-2 gap-12 items-center z-10">
+      <div className="max-w-7xl w-full z-10 flex flex-col items-center lg:items-start text-center lg:text-left">
         <motion.div
           variants={containerVariants}
           initial="hidden"
           animate="visible"
-          className="flex flex-col items-center lg:items-start text-center lg:text-left"
+          className="max-w-3xl"
         >
           <motion.div variants={itemVariants} className="mb-6">
             <Badge variant="outline" className="glass-panel text-pink-600 font-bold px-4 py-1.5 rounded-full flex gap-2 items-center border-pink-200/50 shadow-sm">
@@ -47,7 +45,7 @@ const Header = () => {
 
           <motion.h1 
             variants={itemVariants}
-            className="text-6xl md:text-8xl font-black tracking-tighter text-gray-900 mb-6 leading-tight"
+            className="text-6xl md:text-8xl lg:text-9xl font-black tracking-tighter text-gray-900 mb-6 leading-none"
           >
             Jonas Facon
           </motion.h1>
@@ -60,7 +58,7 @@ const Header = () => {
             Passionné par le développement et l&apos;exploration des nouvelles technologies.
           </motion.p>
 
-          <motion.div variants={itemVariants} className="flex gap-4">
+          <motion.div variants={itemVariants} className="flex flex-wrap justify-center lg:justify-start gap-4">
             <a href="https://cv.jonas-facon.dev" className="px-8 py-4 bg-gray-900 text-white rounded-2xl font-bold hover:bg-gray-800 transition-all shadow-xl hover:scale-105 active:scale-95">
               Télécharger mon CV
             </a>
@@ -70,21 +68,6 @@ const Header = () => {
               <SocialIcon href="https://github.com/Jonas0o0" icon={<Github size={20} />} />
             </div>
           </motion.div>
-        </motion.div>
-
-        <motion.div
-          initial={{ opacity: 0, scale: 0.8 }}
-          animate={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 1, ease: [0.22, 1, 0.36, 1], delay: 0.2 }}
-          className="relative flex justify-center lg:justify-end"
-        >
-          <div className="relative w-64 h-64 md:w-96 md:h-96 rounded-full glass-panel p-3 shadow-2xl border-white/60 overflow-hidden group">
-            <img 
-              src="/images/portrait.jpg" 
-              alt="Jonas Facon" 
-              className="w-full h-full object-cover rounded-full transition-all duration-700 scale-105 group-hover:scale-100"
-            />
-          </div>
         </motion.div>
       </div>
 
