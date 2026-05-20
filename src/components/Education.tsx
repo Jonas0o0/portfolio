@@ -33,7 +33,6 @@ const Education = () => {
           viewport={{ once: true }}
           className="mb-20"
         >
-          <span className="text-purple-500 font-black uppercase tracking-[0.3em] text-sm mb-4 block">Background</span>
           <h2 className="text-6xl md:text-8xl font-black tracking-tighter">Éducation<span className="text-purple-500">.</span></h2>
         </motion.div>
 

@@ -16,8 +16,6 @@ const Contact = () => {
         transition={{ duration: 1 }}
         className="text-center z-10 max-w-4xl"
       >
-        <span className="text-purple-500 font-black uppercase tracking-[0.4em] text-sm mb-6 block">Me contacter</span>
-        
         <h2 className="text-5xl md:text-7xl font-black tracking-tighter leading-tight mb-12">
           Parlons de votre prochain <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-500 underline decoration-purple-500/30">projet</span>.
         </h2>

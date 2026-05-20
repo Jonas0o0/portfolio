@@ -52,7 +52,6 @@ export default function Experience() {
       <div className="max-w-7xl mx-auto relative z-10">
         <div className="flex flex-col md:flex-row justify-between items-end mb-24 gap-8">
           <div>
-            <span className="text-purple-500 font-black uppercase tracking-[0.3em] text-sm mb-4 block">Selected Works</span>
             <h2 className="text-6xl md:text-8xl font-black tracking-tighter">Projets<span className="text-purple-500">.</span></h2>
           </div>
           <p className="text-gray-400 max-w-md text-lg leading-relaxed">
