@@ -29,7 +29,7 @@ function Blob() {
 
 export default function Hero3D() {
   return (
-    <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-full opacity-40 pointer-events-none">
+    <div className="absolute top-1/2 right-0 translate-y-[-50%] w-[80%] h-full opacity-30 pointer-events-none translate-x-[20%]">
       <Canvas camera={{ position: [0, 0, 5], fov: 75 }}>
         <ambientLight intensity={0.5} />
         <directionalLight position={[10, 10, 5]} intensity={1} />

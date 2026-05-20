@@ -18,7 +18,7 @@ const Navbar = () => {
       initial={{ y: -50, x: '-50%', opacity: 0 }}
       animate={{ y: 0, x: '-50%', opacity: 1 }}
       transition={{ duration: 1, ease: [0.22, 1, 0.36, 1] }}
-      className="fixed top-8 left-1/2 -translate-x-1/2 z-50 px-6 py-3 glass-panel rounded-2xl border-white/60 shadow-xl"
+      className="fixed top-8 left-1/2 z-50 px-6 py-3 glass-panel rounded-2xl border-white/60 shadow-xl"
     >
       <ul className="flex items-center gap-2 md:gap-4">
         {navLinks.map((link) => (
