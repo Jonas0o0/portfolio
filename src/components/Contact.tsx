@@ -18,7 +18,7 @@ const Contact = () => {
       >
         <span className="text-purple-500 font-black uppercase tracking-[0.4em] text-sm mb-6 block">Get in touch</span>
         
-        <h2 className="text-7xl md:text-9xl font-black tracking-tighter leading-tight mb-12">
+        <h2 className="text-5xl md:text-7xl font-black tracking-tighter leading-tight mb-12">
           Parlons de votre prochain <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-500 underline decoration-purple-500/30">projet</span>.
         </h2>
 
