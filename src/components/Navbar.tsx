@@ -9,34 +9,30 @@ const Navbar = () => {
   const [isDark, setIsDark] = useState(false);
 
   useEffect(() => {
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          // Si l'une des sections sombres est visible sous la nav
-          if (entry.isIntersecting) {
-            setIsDark(true);
-          } else {
-            // Vérifier si aucune autre section sombre n'est intersectée
-            const darkSections = document.querySelectorAll('#experience, #contact');
-            const anyVisible = Array.from(darkSections).some(section => {
-                const rect = section.getBoundingClientRect();
-                return rect.top <= 100 && rect.bottom >= 100;
-            });
-            setIsDark(anyVisible);
+    const handleScroll = () => {
+      const darkSections = ['experience', 'contact'];
+      const sections = ['home', 'about', 'skills', 'experience', 'education', 'contact'];
+      
+      let currentSection = '';
+      for (const id of sections) {
+        const element = document.getElementById(id);
+        if (element) {
+          const rect = element.getBoundingClientRect();
+          // Si le haut de la section est au-dessus du milieu de la navbar (ou proche du haut)
+          if (rect.top <= 100) {
+            currentSection = id;
           }
-        });
-      },
-      {
-        // On observe quand la section passe sous la barre de nav (environ 80px du haut)
-        rootMargin: '-80px 0px -90% 0px',
-        threshold: 0
+        }
       }
-    );
+      
+      setIsDark(darkSections.includes(currentSection));
+    };
 
-    const darkSections = document.querySelectorAll('#experience, #contact');
-    darkSections.forEach((section) => observer.observe(section));
+    window.addEventListener('scroll', handleScroll);
+    // Appel initial
+    handleScroll();
 
-    return () => darkSections.forEach((section) => observer.unobserve(section));
+    return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
   const navLinks = [
