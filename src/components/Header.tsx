@@ -39,7 +39,7 @@ const Header = () => {
           <motion.div variants={itemVariants} className="mb-6">
             <Badge variant="outline" className="glass-panel text-pink-600 font-bold px-4 py-1.5 rounded-full inline-flex gap-2 items-center border-pink-200/50 shadow-sm w-fit">
               <Sparkles size={16} className="text-pink-500" />
-              Disponible
+              Disponible pour de nouveaux projets
             </Badge>
           </motion.div>
 
