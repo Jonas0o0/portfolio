@@ -34,25 +34,25 @@ const Header = () => {
           variants={containerVariants}
           initial="hidden"
           animate="visible"
-          className="max-w-3xl"
+          className="w-full"
         >
           <motion.div variants={itemVariants} className="mb-6">
-            <Badge variant="outline" className="glass-panel text-pink-600 font-bold px-4 py-1.5 rounded-full flex gap-2 items-center border-pink-200/50 shadow-sm">
+            <Badge variant="outline" className="glass-panel text-pink-600 font-bold px-4 py-1.5 rounded-full inline-flex gap-2 items-center border-pink-200/50 shadow-sm w-fit">
               <Sparkles size={16} className="text-pink-500" />
-              Disponible pour de nouveaux projets
+              Disponible
             </Badge>
           </motion.div>
 
           <motion.h1 
             variants={itemVariants}
-            className="text-6xl md:text-8xl lg:text-9xl font-black tracking-tighter text-gray-900 mb-6 leading-none"
+            className="text-6xl md:text-8xl lg:text-9xl font-black tracking-tighter text-gray-900 mb-6 leading-tight whitespace-nowrap"
           >
             Jonas Facon
           </motion.h1>
 
           <motion.p 
             variants={itemVariants}
-            className="text-xl md:text-2xl text-gray-500 max-w-lg mb-10 leading-relaxed font-medium"
+            className="text-xl md:text-2xl text-gray-500 max-w-2xl mb-10 leading-relaxed font-medium"
           >
             Étudiant en 2ᵉ année de <span className="text-gray-900">BUT Informatique</span>. 
             Passionné par le développement et l&apos;exploration des nouvelles technologies.
