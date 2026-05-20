@@ -61,15 +61,11 @@ const Navbar = () => {
             <Link 
               href={link.href} 
               className={cn(
-                "relative block px-4 py-2 text-xs md:text-sm font-black uppercase tracking-[0.2em] transition-colors duration-500 group",
+                "relative block px-4 py-2 text-xs md:text-sm font-black uppercase tracking-[0.2em] transition-colors duration-500",
                 isDark ? "text-gray-400 hover:text-white" : "text-gray-500 hover:text-gray-900"
               )}
             >
               {link.name}
-              <span className={cn(
-                "absolute bottom-1 left-4 right-4 h-[2px] scale-x-0 group-hover:scale-x-100 transition-transform origin-left duration-300 rounded-full",
-                isDark ? "bg-purple-400" : "bg-pink-500"
-              )}></span>
             </Link>
           </li>
         ))}
