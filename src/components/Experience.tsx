@@ -1,107 +1,128 @@
-import { Github, Star } from 'lucide-react';
+'use client';
+
+import { Github, ExternalLink, ArrowRight } from 'lucide-react';
+import { motion, useScroll, useTransform } from 'framer-motion';
+import { useRef } from 'react';
+import { Badge } from '@/components/ui/badge';
 
 const projects = [
   {
-    "name": "portfolio",
-    "description": "Portfolio personnel présentant mes projets, mes compétences et mon parcours. Il met en avant mon travail en développement et sert de vitrine de mes réalisations.",
-    "language": "CSS",
+    "name": "Portfolio 2026",
+    "description": "Une vitrine numérique immersive conçue avec Next.js 15, Three.js et Framer Motion. Focus sur le storytelling et l'expérience utilisateur.",
+    "language": "TypeScript",
     "html_url": "https://github.com/Jonas0o0/portfolio",
-    "stargazers_count": 1,
-    "category": "perso"
+    "category": "Personnal",
+    "color": "from-purple-500 to-indigo-500"
   },
   {
-    "name": "Labyrinthe-des-Dys-Parus",
-    "description": "Le labyrinthe des dys-parus est un jeu de labyrinthe dans lequel on progresse parmi plusieurs étapes changeant la manière de voir le jeu. Un mode coop et un mode libre sont aussi inclut.",
+    "name": "Dys-Parus",
+    "description": "Jeu de labyrinthe expérimental en Java. Une exploration ludique de la perception et du changement de perspective à travers plusieurs niveaux évolutifs.",
     "language": "Java",
     "html_url": "https://github.com/Jonas0o0/Labyrinthe-des-Dys-Parus",
-    "stargazers_count": 1,
-    "category": "universitaire"
+    "category": "Academic",
+    "color": "from-pink-500 to-rose-500"
   },
   {
     "name": "Kass-Brikerie",
-    "description": "Kass Brikerie est un jeu de casse-brique développé en Java pour terminal, en utilisant la méthode agile, réalisé par une équipe aléatoire de 6 personnes.",
+    "description": "Casse-brique moderne développé en mode agile. Une démonstration de collaboration technique et de gestion de projet au sein d'une équipe de 6 développeurs.",
     "language": "Java",
     "html_url": "https://github.com/Jonas0o0/Kass-Brikerie",
-    "stargazers_count": 1,
-    "category": "universitaire"
+    "category": "Academic",
+    "color": "from-blue-500 to-cyan-500"
   },
   {
-    "name": "Application-association-etudiants",
-    "description": "Outil d’Aide à la Décision pour Séjours Linguistiques",
-    "language": "Java",
-    "html_url": "https://github.com/Jonas0o0/Application-association-etudiants",
-    "stargazers_count": 1,
-    "category": "universitaire"
-  },
-  {
-    "name": "cryptodec",
-    "description": "Web app pour analyser et déclarer ses crypto de different wallet",
+    "name": "Cryptodec",
+    "description": "Solution d'analyse et de déclaration fiscale pour portefeuilles multi-chaînes. Simplifier la complexité de l'écosystème crypto.",
     "language": "TypeScript",
     "html_url": "https://github.com/Jonas0o0/cryptodec",
-    "stargazers_count": 1,
-    "category": "perso"
-  },
-  {
-    "name": "cooffe-machine",
-    "description": "Configuration emacs et I3 pour donner envie à des personnes sans temps à perdre de mettre un pied dans notre workflow",
-    "language": "Shell",
-    "html_url": "https://github.com/EvanDelepine/coffee-machine",
-    "stargazers_count": 1,
-    "category": "perso"
+    "category": "Personnal",
+    "color": "from-orange-500 to-yellow-500"
   }
 ];
 
 export default function Experience() {
-  const persoProjects = projects.filter(p => p.category === 'perso');
-  const universitaireProjects = projects.filter(p => p.category === 'universitaire');
-
   return (
-    <section id="experience" className="min-h-screen p-20">
-      <h1 className="mb-20 font-extrabold text-5xl italic text-center">Expérience</h1>
-
-      <h2 className="mb-10 font-extrabold text-3xl italic">Projets Personnels</h2>
-      <div className="flex flex-wrap justify-center gap-8 mb-20">
-        {persoProjects.map((project) => (
-            <a key={project.name} href={project.html_url} target="_blank" rel="noopener noreferrer" className="block w-[500px] p-8 border rounded-xl bg-white/2.5 border-white/50 backdrop-blur-sm shadow-[inset_0_1px_0px_rgba(255,255,255,0.75),0_0_9px_rgba(0,0,0,0.2),0_3px_8px_rgba(0,0,0,0.15)] hover:bg-white/30 transition-all duration-300">
-                <div className="flex items-start gap-6">
-                  <Github size={20} className="h-8 w-8 text-purple-600"/>
-                  <h2 className="font-bold text-xl">{project.name}</h2>
-                </div>
-                <div className="flex-col items-end gap-6">
-                    <p className="mt-4 text-gray-700">{project.description}</p>
-                    <div className="mt-4 flex items-center gap-4 text-sm text-gray-500">
-                      <span>{project.language}</span>
-                      <div className="flex items-center gap-1">
-                        <Star size={16}/>
-                        <span>{project.stargazers_count}</span>
-                      </div>
-                    </div>
-                </div>
-            </a>
-        ))}
+    <section id="experience" className="min-h-screen py-32 px-6 bg-gray-900 text-white relative overflow-hidden">
+      {/* Background decoration */}
+      <div className="absolute top-0 left-0 w-full h-full opacity-10 pointer-events-none">
+        <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-purple-600 rounded-full blur-[150px]"></div>
+        <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-blue-600 rounded-full blur-[150px]"></div>
       </div>
 
-      <h2 className="mb-10 font-extrabold text-3xl italic">Projets Universitaires</h2>
-      <div className="flex flex-wrap justify-center gap-8 mb-20">
-        {universitaireProjects.map((project) => (
-            <a key={project.name} href={project.html_url} target="_blank" rel="noopener noreferrer" className="block w-[500px] p-8 border rounded-xl bg-white/2.5 border-white/50 backdrop-blur-sm shadow-[inset_0_1px_0px_rgba(255,255,255,0.75),0_0_9px_rgba(0,0,0,0.2),0_3px_8px_rgba(0,0,0,0.15)] hover:bg-white/30 transition-all duration-300">
-                <div className="flex items-start gap-6">
-                    <Github size={20} className="h-8 w-8 text-purple-600"/>
-                    <h2 className="font-bold text-xl">{project.name}</h2>
-                </div>
-                <div className="flex-col items-end gap-6">
-                    <p className="mt-4 text-gray-700">{project.description}</p>
-                    <div className="mt-4 flex items-center gap-4 text-sm text-gray-500">
-                        <span>{project.language}</span>
-                        <div className="flex items-center gap-1">
-                            <Star size={16}/>
-                            <span>{project.stargazers_count}</span>
-                        </div>
-                    </div>
-                </div>
-            </a>
-        ))}
+      <div className="max-w-7xl mx-auto relative z-10">
+        <div className="flex flex-col md:flex-row justify-between items-end mb-24 gap-8">
+          <div>
+            <span className="text-purple-500 font-black uppercase tracking-[0.3em] text-sm mb-4 block">Selected Works</span>
+            <h2 className="text-6xl md:text-8xl font-black tracking-tighter">Projets<span className="text-purple-500">.</span></h2>
+          </div>
+          <p className="text-gray-400 max-w-md text-lg leading-relaxed">
+            Une exploration constante de la technique et du design, où chaque projet est un nouveau défi.
+          </p>
+        </div>
+
+        <div className="space-y-32">
+          {projects.map((project, index) => (
+            <ProjectItem key={project.name} project={project} index={index} />
+          ))}
+        </div>
       </div>
     </section>
+  );
+}
+
+function ProjectItem({ project, index }: { project: any; index: number }) {
+  const container = useRef(null);
+  const { scrollYProgress } = useScroll({
+    target: container,
+    offset: ["start end", "end start"]
+  });
+
+  const y = useTransform(scrollYProgress, [0, 1], [0, -100]);
+  const isEven = index % 2 === 0;
+
+  return (
+    <div ref={container} className={`flex flex-col ${isEven ? 'md:flex-row' : 'md:flex-row-reverse'} gap-12 items-center`}>
+      {/* Visual Part */}
+      <div className="w-full md:w-3/5 relative group cursor-pointer">
+        <motion.div 
+          style={{ y }}
+          className={`aspect-video rounded-3xl overflow-hidden bg-gradient-to-br ${project.color} p-1`}
+        >
+          <div className="w-full h-full bg-gray-800 rounded-[1.4rem] flex items-center justify-center relative overflow-hidden group-hover:bg-transparent transition-colors duration-700">
+             <Github size={120} className="text-gray-700 group-hover:text-white group-hover:scale-110 transition-all duration-700 opacity-20 group-hover:opacity-100" />
+             
+             {/* Abstract Shapes */}
+             <div className="absolute top-0 right-0 w-32 h-32 bg-white opacity-5 rotate-45 translate-x-16 -translate-y-16 group-hover:translate-x-12 group-hover:-translate-y-12 transition-transform duration-700"></div>
+          </div>
+        </motion.div>
+      </div>
+
+      {/* Info Part */}
+      <div className="w-full md:w-2/5 space-y-6">
+        <div className="flex items-center gap-4">
+          <span className="text-4xl font-black text-gray-800">0{index + 1}</span>
+          <Badge variant="outline" className="border-gray-700 text-gray-400 rounded-full px-4">{project.category}</Badge>
+        </div>
+        
+        <h3 className="text-4xl md:text-5xl font-black tracking-tight group-hover:text-purple-400 transition-colors">{project.name}</h3>
+        
+        <p className="text-xl text-gray-400 leading-relaxed">
+          {project.description}
+        </p>
+
+        <div className="flex flex-wrap gap-3">
+           <Badge className="bg-white/5 hover:bg-white/10 text-white border-none px-4 py-1">{project.language}</Badge>
+        </div>
+
+        <div className="pt-6 flex gap-6">
+          <a href={project.html_url} target="_blank" className="flex items-center gap-2 text-white font-bold group/link">
+             Github <ArrowRight size={18} className="group-hover/link:translate-x-2 transition-transform" />
+          </a>
+          <a href="#" className="text-gray-500 hover:text-white transition-colors">
+             <ExternalLink size={20} />
+          </a>
+        </div>
+      </div>
+    </div>
   );
 }

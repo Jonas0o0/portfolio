@@ -1,57 +1,78 @@
 'use client';
 
-import { Award, GraduationCap } from 'lucide-react';
+import { Award, GraduationCap, Calendar } from 'lucide-react';
+import { motion } from 'framer-motion';
 
 const Education = () => {
-    return (
-        <section id="education" className="min-h-screen p-20">
-            <h1 className="mb-20 font-extrabold text-5xl italic text-center">Études</h1>
-            <div className="flex flex-col items-center gap-12">
-                <div
-                    className="w-2/3 p-8 border rounded-xl bg-white/2.5 border-white/50 backdrop-blur-sm shadow-[inset_0_1px_0px_rgba(255,255,255,0.75),0_0_9px_rgba(0,0,0,0.2),0_3px_8px_rgba(0,0,0,0.15)] transition-all duration-300">
-                    <div className="flex items-start gap-6">
-                        <Award size={40} className="text-purple-600"/>
-                        <div>
-                            <h2 className="font-bold text-2xl">BUT Informatique</h2>
-                            <div className="flex items-center gap-4">
-                                <img src="/logos/univ.jpeg" alt="Université de Lille" className="h-10"/>
-                                <h3 className="font-semibold text-xl text-gray-800">IUT de Lille - Université de
-                                    Lille</h3>
-                            </div>
-                            <p className="text-sm text-gray-500">Depuis 2024</p>
-                            <p className="mt-4">
-                                Formation axée sur la pratique avec des matières comme :
-                                <br/>
-                                Java, Technologies Web (HTML, CSS, JS), Réseaux & Systèmes, Communication.
-                            </p>
-                        </div>
-                    </div>
+  const educationData = [
+    {
+      title: "BUT Informatique",
+      institution: "IUT de Lille - Université de Lille",
+      date: "2024 - Présent",
+      description: "Formation intensive en développement logiciel, architectures web et systèmes d'information.",
+      icon: <Award size={24} />,
+    },
+    {
+      title: "Baccalauréat Général",
+      institution: "Lycée Gustave Eiffel",
+      date: "2021 - 2024",
+      description: "Spécialités Mathématiques & NSI. Mention Bien.",
+      icon: <GraduationCap size={24} />,
+    }
+  ];
+
+  return (
+    <section id="education" className="min-h-screen py-32 px-6 flex flex-col items-center justify-center relative overflow-hidden">
+       {/* Background decoration */}
+      <div className="absolute top-0 right-0 w-1/2 h-full bg-purple-500/[0.02] -skew-x-12 pointer-events-none"></div>
+
+      <div className="max-w-4xl w-full z-10">
+        <motion.div
+          initial={{ opacity: 0, x: -50 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          viewport={{ once: true }}
+          className="mb-20"
+        >
+          <span className="text-purple-500 font-black uppercase tracking-[0.3em] text-sm mb-4 block">Background</span>
+          <h2 className="text-6xl md:text-8xl font-black tracking-tighter">Éducation<span className="text-purple-500">.</span></h2>
+        </motion.div>
+
+        <div className="space-y-24">
+          {educationData.map((item, index) => (
+            <motion.div
+              key={index}
+              initial={{ opacity: 0, y: 50 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.8, delay: index * 0.2 }}
+              className="relative pl-12 md:pl-0"
+            >
+              <div className="flex flex-col md:flex-row gap-8 items-start">
+                <div className="md:w-1/4 pt-2">
+                   <span className="text-2xl font-black text-purple-600 block">{item.date}</span>
                 </div>
-                <div
-                    className="w-2/3 p-8 border rounded-xl bg-white/2.5 border-white/50 backdrop-blur-sm shadow-[inset_0_1px_0px_rgba(255,255,255,0.75),0_0_9px_rgba(0,0,0,0.2),0_3px_8px_rgba(0,0,0,0.15)] transition-all duration-300">
-                    <div className="flex items-start gap-6">
-                        <GraduationCap size={40} className="text-purple-600"/>
-                        <div>
-                            <h2 className="font-bold text-2xl">Baccalauréat Général - Mention Bien</h2>
-                            <div className="flex items-center gap-4">
-                                <img src="/logos/lycee.png" alt="Lycée Gustave Eiffel" className="h-10"/>
-                                <h3 className="font-semibold text-xl text-gray-800">Lycée Gustave Eiffel,
-                                    Armentières</h3>
-                            </div>
-                            <p className="text-sm text-gray-500">2021 - 2024</p>
-                            <p className="mt-4">
-                                Spécialités : Mathématiques et Numérique et Sciences Informatiques (NSI).
-                                <br/>
-                                Option : Mathématiques Expertes.
-                                <br/>
-                                Autres matières : Python, Anglais, Espagnol.
-                            </p>
-                        </div>
-                    </div>
+                
+                <div className="md:w-3/4 group">
+                  <div className="flex items-center gap-4 mb-4">
+                     <div className="w-12 h-12 rounded-2xl bg-gray-900 text-white flex items-center justify-center shadow-2xl group-hover:bg-purple-600 transition-colors duration-500">
+                        {item.icon}
+                     </div>
+                     <h3 className="text-3xl font-black text-gray-900 tracking-tight">{item.title}</h3>
+                  </div>
+                  
+                  <h4 className="text-xl font-bold text-gray-500 mb-4">{item.institution}</h4>
+                  
+                  <p className="text-xl text-gray-600 leading-relaxed max-w-2xl">
+                    {item.description}
+                  </p>
                 </div>
-            </div>
-        </section>
-    );
+              </div>
+            </motion.div>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
 };
 
 export default Education;

@@ -1,6 +1,7 @@
 'use client';
 
 import SkillCard from './SkillCard';
+import { motion } from 'framer-motion';
 
 const skills = {
     programming: [
@@ -27,52 +28,59 @@ const skills = {
     ],
 };
 
-const Skills = () => {
-    return (
-        <section id="skills" className="min-h-screen flex-col items-center justify-start w-full p-50">
-            <h1 className="mb-20 font-extrabold text-5xl italic">Compétences</h1>
-            <section className="flex justify-center mt-2">
-                <div className="flex justify-end items-start w-[550px]">
-                    <h2 className="font-extrabold text-3xl">LANGAGES DE PROGRAMMATION</h2>
-                </div>
-                <div className="flex flex-wrap w-[800px]">
-                    {skills.programming.map((skill) => (
-                        <SkillCard key={skill.name} name={skill.name} icon={skill.icon} />
-                    ))}
-                </div>
-            </section>
-            <section className="flex justify-center mt-2">
-                <div className="flex justify-end items-start w-[550px]">
-                    <h2 className="font-extrabold text-3xl">DÉVELOPPEMENT WEB</h2>
-                </div>
-                <div className="flex flex-wrap w-[800px]">
-                    {skills.web.map((skill) => (
-                        <SkillCard key={skill.name} name={skill.name} icon={skill.icon} />
-                    ))}
-                </div>
-            </section>
-            <section className="flex justify-center mt-2">
-                <div className="flex justify-end items-start w-[550px]">
-                    <h2 className="font-extrabold text-3xl">BASE DE DONNÉES</h2>
-                </div>
-                <div className="flex flex-wrap w-[800px]">
-                    {skills.database.map((skill) => (
-                        <SkillCard key={skill.name} name={skill.name} icon={skill.icon} />
-                    ))}
-                </div>
-            </section>
-            <section className="flex justify-center mt-2">
-                <div className="flex justify-end items-start w-[550px]">
-                    <h2 className="font-extrabold text-3xl">OUTILS ET ENVIRONNEMENTS</h2>
-                </div>
-                <div className="flex flex-wrap w-[800px]">
-                    {skills.tools.map((skill) => (
-                        <SkillCard key={skill.name} name={skill.name} icon={skill.icon} />
-                    ))}
-                </div>
-            </section>
-        </section>
-    );
-};
+export default function Skills() {
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: { staggerChildren: 0.1 },
+    },
+  };
 
-export default Skills;
+  const itemVariants = {
+    hidden: { opacity: 0, scale: 0.9 },
+    visible: { opacity: 1, scale: 1 },
+  };
+
+  return (
+    <section id="skills" className="py-24 px-6 md:px-20 max-w-7xl mx-auto">
+      <div className="mb-20">
+        <h2 className="text-4xl md:text-6xl font-black tracking-tighter text-gray-900 mb-4">
+          Compétences<span className="text-pink-500">.</span>
+        </h2>
+        <div className="h-1 w-20 bg-pink-500 rounded-full"></div>
+      </div>
+
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-16">
+        <SkillCategory title="Programmation" items={skills.programming} containerVariants={containerVariants} itemVariants={itemVariants} />
+        <SkillCategory title="Web Design & Dev" items={skills.web} containerVariants={containerVariants} itemVariants={itemVariants} />
+        <SkillCategory title="Bases de Données" items={skills.database} containerVariants={containerVariants} itemVariants={itemVariants} />
+        <SkillCategory title="Outils & DevOps" items={skills.tools} containerVariants={containerVariants} itemVariants={itemVariants} />
+      </div>
+    </section>
+  );
+}
+
+function SkillCategory({ title, items, containerVariants, itemVariants }: any) {
+  return (
+    <div className="space-y-8">
+      <h3 className="text-xl font-bold text-gray-400 uppercase tracking-widest flex items-center gap-3">
+        <span className="w-8 h-[2px] bg-pink-500/30"></span>
+        {title}
+      </h3>
+      <motion.div 
+        variants={containerVariants}
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true }}
+        className="flex flex-wrap gap-4"
+      >
+        {items.map((skill: any) => (
+          <motion.div key={skill.name} variants={itemVariants}>
+            <SkillCard name={skill.name} icon={skill.icon} />
+          </motion.div>
+        ))}
+      </motion.div>
+    </div>
+  );
+}

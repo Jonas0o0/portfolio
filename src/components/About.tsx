@@ -1,51 +1,70 @@
 'use client';
 
+import { motion } from 'framer-motion';
+
 const About = () => {
-    return (
-        <section id="about" className=" min-h-screen flex-col justify-center items-center p-20">
-            <h1 className="mb-20 font-extrabold text-5xl italic text-center">A Propos</h1>
-            <section className="flex justify-around items-center">
-                <img className="h-[600px] w-[600px] rounded-full" src="/images/portrait.jpg" alt="Portrait of Jonas Facon"/>
-                <div className="w-4xl">
-                    <p>
-                        <h4 className="pt-4 pb-4">Construire les algorithmes de demain</h4>
+  return (
+    <section id="about" className="py-24 px-6 md:px-20 max-w-7xl mx-auto">
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+        
+        <motion.div
+          initial={{ opacity: 0, x: -30 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 1 }}
+          className="order-2 lg:order-1"
+        >
+          <h2 className="text-4xl md:text-6xl font-black tracking-tighter text-gray-900 mb-8">
+            À Propos<span className="text-pink-500">.</span>
+          </h2>
+          
+          <div className="space-y-6 text-lg text-gray-600 leading-relaxed">
+            <p>
+              Étudiant en 2ème année de <span className="text-gray-900 font-bold">BUT Informatique</span>, je suis un créatif insatiable. Lego, couture, dessin, peinture... j&apos;ai toujours exploré pour comprendre le <span className="italic">comment</span> des choses.
+            </p>
+            
+            <p>
+              Ma force réside dans ma capacité à ne pas me limiter à une seule discipline. Cette habitude de toucher à tout me donne une vision différente des projets. Là où certains voient des technologies séparées, je vois des possibilités de les combiner.
+            </p>
 
-                        Étudiant en 2ème année de BUT Informatique, je suis de ceux qui touchent à tout. Lego, couture,
-                        dessin, peinture... j'ai toujours eu besoin d'explorer, de créer, de comprendre comment les
-                        choses fonctionnent. Aujourd'hui, ce sont l'intelligence artificielle, la crypto et la finance
-                        qui captent mon attention.
+            <p>
+              Ma curiosité me pousse à voir au-delà du code : je m&apos;intéresse aux <span className="text-gray-900 font-bold underline decoration-pink-500 decoration-4">pourquoi</span> autant qu&apos;aux <span className="text-gray-900 font-bold">comment</span>. Je cherche sincèrement à comprendre comment les technologies évoluent et comment y contribuer.
+            </p>
 
-                        <h4 className="pt-4 pb-4">Ce qui me drive</h4>
+            <div className="pt-8 flex flex-col sm:flex-row gap-8">
+              <div>
+                <h4 className="text-xs uppercase tracking-widest font-black text-pink-500 mb-2">Vision</h4>
+                <p className="text-sm font-medium">Aborder les problèmes sous un autre angle pour faire naître de nouvelles idées.</p>
+              </div>
+              <div>
+                <h4 className="text-xs uppercase tracking-widest font-black text-pink-500 mb-2">Objectif</h4>
+                <p className="text-sm font-medium">Mettre mes compétences au service de projets concrets et continuer à apprendre.</p>
+              </div>
+            </div>
+          </div>
+        </motion.div>
 
-                        J'explore le fonctionnement de l'IA et de la blockchain à la recherche de possibilités pour créer
-                        les services du futur. Pas de grandes déclarations — je préfère creuser, expérimenter et
-                        comprendre réellement ce qui se passe. Ma curiosité pour la finance me pousse à voir au-delà du
-                        code : je m'intéresse aux <strong>pourquoi</strong> autant qu'aux <strong>comment</strong>.
-
-                        <h4 className="pt-4" pb-4>Mon approche</h4>
-
-                        Ma force ? <strong>Je ne me limite pas à une seule discipline.</strong> Cette habitude de
-                        toucher à tout me donne une vision différente des projets. Là où certains voient des technologies
-                        séparées, je vois des possibilités de les combiner. Ma créativité et mes connaissances en finance
-                        me permettent d'aborder les problèmes sous un autre angle et ainsi de nouvelles idées
-                        intéressantes peuvent naître.<br/>
-                        <br/>
-                        Je ne prétends pas révolutionner le monde, mais j'essaie sincèrement de comprendre où va la tech
-                        et comment y contribuer.
-
-                        <h4 className="pt-4 pb-4">Vers où je vais</h4>
-
-                        Mon objectif à long terme ? Contribuer à la recherche en IA ou dans l'écosystème crypto. Mais
-                        pour l'instant, je cherche un <strong>stage de 10 semaines</strong> pour avril où mettre mes
-                        compétences au service de projets concrets, apprendre auprès de gens qui savent, et continuer à
-                        nourrir ma curiosité.<br/>
-                        <br/>
-                        <strong>Une question ? Un projet ?</strong> N'hésitez pas à me contacter.
-                    </p>
-                </div>
-            </section>
-        </section>
-    );
+        <motion.div
+          initial={{ opacity: 0, scale: 0.9 }}
+          whileInView={{ opacity: 1, scale: 1 }}
+          viewport={{ once: true }}
+          transition={{ duration: 1 }}
+          className="order-1 lg:order-2 flex justify-center"
+        >
+          <div className="relative group">
+            <div className="absolute inset-0 bg-pink-200 rounded-3xl blur-3xl opacity-20 group-hover:opacity-40 transition-opacity"></div>
+            <div className="relative aspect-[4/5] w-full max-w-sm rounded-3xl overflow-hidden glass-panel p-2 shadow-2xl">
+              <img 
+                src="/images/portrait.jpg" 
+                alt="Jonas Facon" 
+                className="w-full h-full object-cover rounded-2xl transition-all duration-700"
+              />
+            </div>
+          </div>
+        </motion.div>
+      </div>
+    </section>
+  );
 };
 
 export default About;

@@ -1,19 +1,26 @@
 'use client';
 
 import Image from 'next/image';
+import { motion } from 'framer-motion';
 
 interface SkillCardProps {
-    icon: string;
-    name: string;
+  icon: string;
+  name: string;
 }
 
 const SkillCard = ({ icon, name }: SkillCardProps) => {
-    return (
-        <div className="mb-8 text-xl p-20 ml-8 inline-flex items-center justify-around border align-middle select-none font-sans font-medium text-center px-4 py-2 text-black text-sm font-medium rounded-xl bg-white/2.5 border-white/50 backdrop-blur-sm shadow-[inset_0_1px_0px_rgba(255,255,255,0.75),0_0_9px_rgba(0,0,0,0.2),0_3px_8px_rgba(0,0,0,0.15)] hover:bg-white/30 transition-all duration-300 before:absolute before:inset-0 before:rounded-lg before:bg-gradient-to-br before:from-white/60 before:via-transparent before:to-transparent before:opacity-70 before:pointer-events-none after:absolute after:inset-0 after:rounded-xl after:bg-gradient-to-tl after:from-white/30 after:via-transparent after:to-transparent after:opacity-50 after:pointer-events-none transition antialiased">
-            <Image width="40" height="40" src={icon} alt={`${name} logo`} />
-            <span className="text-xl mx-3">{name}</span>
-        </div>
-    );
+  return (
+    <motion.div
+      whileHover={{ scale: 1.05, y: -5 }}
+      whileTap={{ scale: 0.95 }}
+      className="relative flex items-center gap-4 px-6 py-4 rounded-2xl glass-panel border-white/40 hover:bg-white/50 hover:border-white/60 transition-all duration-300 shadow-sm hover:shadow-md group cursor-default"
+    >
+      <div className="relative w-10 h-10 flex items-center justify-center transition-all duration-500">
+        <Image width="40" height="40" src={icon} alt={`${name} logo`} className="object-contain" />
+      </div>
+      <span className="text-lg font-semibold text-gray-700 group-hover:text-gray-900 transition-colors">{name}</span>
+    </motion.div>
+  );
 };
 
 export default SkillCard;

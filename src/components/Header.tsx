@@ -1,45 +1,121 @@
 'use client';
 
-import { Github, Linkedin, Mail, Sparkles } from 'lucide-react';
+import { Github, Linkedin, Mail, Sparkles, ArrowDown } from 'lucide-react';
+import { motion, Variants } from 'framer-motion';
+import { Badge } from '@/components/ui/badge';
+import Hero3D from './Hero3D';
 
 const Header = () => {
-    return (
-        <header id="home" className="flex items-center justify-center h-screen w-full">
-            <div className="">
-                <a href="mailto:jonas.facon@proton.me"
-                   className="hero-badge inline-flex items-center gap-2 px-5 py-2 bg-gradient-to-r from-pink-100 to-purple-100 rounded-full text-pink-600 font-semibold mb-4 shadow-lg">
-                    <Sparkles size={20}/>
-                    <span>Disponible pour de nouveaux projets</span>
-                </a>
-                <h1 className="font-extrabold text-8xl">Jonas Facon</h1>
-                <p className="w-[600px]">
-                    Actuellement étudiant en 2ᵉ année de BUT Informatique, à la recherche d’un stage de 10 semaines.
-                </p>
+  const containerVariants: Variants = {
+    hidden: { opacity: 0, y: 30 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: {
+        duration: 1,
+        ease: [0.22, 1, 0.36, 1],
+        staggerChildren: 0.1,
+      },
+    },
+  };
 
-                <a href="https://cv.jonas-facon.dev"
-                   className="w-full text-xl p-20 mt-8 inline-flex items-center justify-center border align-middle select-none font-sans font-medium text-center px-4 py-2 text-black text-sm font-medium rounded-full bg-white/2.5 border border-white/50 backdrop-blur-sm shadow-[inset_0_1px_0px_rgba(255,255,255,0.75),0_0_9px_rgba(0,0,0,0.2),0_3px_8px_rgba(0,0,0,0.15)] hover:bg-white/30 transition-all duration-300 before:absolute before:inset-0 before:rounded-lg before:bg-gradient-to-br before:from-white/60 before:via-transparent before:to-transparent before:opacity-70 before:pointer-events-none after:absolute after:inset-0 after:rounded-lg after:bg-gradient-to-tl after:from-white/30 after:via-transparent after:to-transparent after:opacity-50 after:pointer-events-none transition antialiased">
-                    Télécharger mon CV
-                </a>
+  const itemVariants: Variants = {
+    hidden: { opacity: 0, y: 20 },
+    visible: { opacity: 1, y: 0 },
+  };
 
+  return (
+    <header id="home" className="relative min-h-screen flex items-center justify-center overflow-hidden px-6 pt-20">
+      {/* Organic Background Blob - Positioned subtly in the background */}
+      <div className="absolute inset-0 z-0">
+        <Hero3D />
+      </div>
+
+      <div className="max-w-7xl w-full grid grid-cols-1 lg:grid-cols-2 gap-12 items-center z-10">
+        <motion.div
+          variants={containerVariants}
+          initial="hidden"
+          animate="visible"
+          className="flex flex-col items-center lg:items-start text-center lg:text-left"
+        >
+          <motion.div variants={itemVariants} className="mb-6">
+            <Badge variant="outline" className="glass-panel text-pink-600 font-bold px-4 py-1.5 rounded-full flex gap-2 items-center border-pink-200/50 shadow-sm">
+              <Sparkles size={16} className="text-pink-500" />
+              Disponible pour de nouveaux projets
+            </Badge>
+          </motion.div>
+
+          <motion.h1 
+            variants={itemVariants}
+            className="text-6xl md:text-8xl font-black tracking-tighter text-gray-900 mb-6 leading-tight"
+          >
+            Jonas Facon
+          </motion.h1>
+
+          <motion.p 
+            variants={itemVariants}
+            className="text-xl md:text-2xl text-gray-500 max-w-lg mb-10 leading-relaxed font-medium"
+          >
+            Étudiant en 2ᵉ année de <span className="text-gray-900">BUT Informatique</span>. 
+            Passionné par le développement et l&apos;exploration des nouvelles technologies.
+          </motion.p>
+
+          <motion.div variants={itemVariants} className="flex gap-4">
+            <a href="https://cv.jonas-facon.dev" className="px-8 py-4 bg-gray-900 text-white rounded-2xl font-bold hover:bg-gray-800 transition-all shadow-xl hover:scale-105 active:scale-95">
+              Télécharger mon CV
+            </a>
+            <div className="flex gap-2">
+              <SocialIcon href="https://www.linkedin.com/in/jonas-facon/" icon={<Linkedin size={20} />} />
+              <SocialIcon href="mailto:jonas.facon@proton.me" icon={<Mail size={20} />} />
+              <SocialIcon href="https://github.com/Jonas0o0" icon={<Github size={20} />} />
             </div>
-            <div className="w-[10%]"></div>
-            <div className="relative w-[20%]">
-                <img className="h-[100%] w-[100%] rounded-full" src="/images/portrait.jpg" alt="Portrait of Jonas Facon"/>
-                <a href="https://www.linkedin.com/in/jonas-facon/"
-                   className="absolute -left-1 bottom-14 h-[60px] w-[60px] mt-2 inline-flex items-center justify-center border align-middle select-none font-sans font-medium text-center px-4 py-2 text-black text-sm font-medium rounded-full bg-white/2.5 border border-white/50 backdrop-blur-sm shadow-[inset_0_1px_0px_rgba(255,255,255,0.75),0_0_9px_rgba(0,0,0,0.2),0_3px_8px_rgba(0,0,0,0.15)] hover:bg-white/30 transition-all duration-300 before:absolute before:inset-0 before:rounded-full before:bg-gradient-to-br before:from-white/60 before:via-transparent before:to-transparent before:opacity-70 before:pointer-events-none after:absolute after:inset-0 after:rounded-full after:bg-gradient-to-tl after:from-white/30 after:via-transparent after:to-transparent after:opacity-50 after:pointer-events-none transition antialiased">
-                    <Linkedin/>
-                </a>
-                <a href="mailto:jonas.facon@proton.me"
-                   className="absolute left-5 bottom-5 h-[60px] w-[60px] mt-2 inline-flex items-center justify-center border align-middle select-none font-sans font-medium text-center px-4 py-2 text-black text-sm font-medium rounded-full bg-white/2.5 border border-white/50 backdrop-blur-sm shadow-[inset_0_1px_0px_rgba(255,255,255,0.75),0_0_9px_rgba(0,0,0,0.2),0_3px_8px_rgba(0,0,0,0.15)] hover:bg-white/30 transition-all duration-300 before:absolute before:inset-0 before:rounded-full before:bg-gradient-to-br before:from-white/60 before:via-transparent before:to-transparent before:opacity-70 before:pointer-events-none after:absolute after:inset-0 after:rounded-full after:bg-gradient-to-tl after:from-white/30 after:via-transparent after:to-transparent after:opacity-50 after:pointer-events-none transition antialiased">
-                    <Mail/>
-                </a>
-                <a href="https://github.com/Jonas0o0"
-                   className="absolute left-[60px] bottom-0 h-[60px] w-[60px] mt-2 inline-flex items-center justify-center border align-middle select-none font-sans font-medium text-center px-4 py-2 text-black text-sm font-medium rounded-full bg-white/2.5 border border-white/50 backdrop-blur-sm shadow-[inset_0_1px_0px_rgba(255,255,255,0.75),0_0_9px_rgba(0,0,0,0.2),0_3px_8px_rgba(0,0,0,0.15)] hover:bg-white/30 transition-all duration-300 before:absolute before:inset-0 before:rounded-full before:bg-gradient-to-br before:from-white/60 before:via-transparent before:to-transparent before:opacity-70 before:pointer-events-none after:absolute after:inset-0 after:rounded-full after:bg-gradient-to-tl after:from-white/30 after:via-transparent after:to-transparent after:opacity-50 after:pointer-events-none transition antialiased">
-                    <Github/>
-                </a>
-            </div>
-        </header>
-    );
+          </motion.div>
+        </motion.div>
+
+        <motion.div
+          initial={{ opacity: 0, scale: 0.8 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 1, ease: [0.22, 1, 0.36, 1], delay: 0.2 }}
+          className="relative flex justify-center lg:justify-end"
+        >
+          <div className="relative w-64 h-64 md:w-96 md:h-96 rounded-full glass-panel p-3 shadow-2xl border-white/60 overflow-hidden group">
+            <img 
+              src="/images/portrait.jpg" 
+              alt="Jonas Facon" 
+              className="w-full h-full object-cover rounded-full transition-all duration-700 scale-105 group-hover:scale-100"
+            />
+          </div>
+        </motion.div>
+      </div>
+
+      <motion.div 
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ delay: 1.5 }}
+        className="absolute bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center gap-4 text-gray-400"
+      >
+        <span className="text-[10px] uppercase tracking-[0.4em] font-bold">Défiler</span>
+        <motion.div 
+          animate={{ y: [0, 8, 0] }}
+          transition={{ duration: 2, repeat: Infinity }}
+        >
+          <ArrowDown size={20} />
+        </motion.div>
+      </motion.div>
+    </header>
+  );
 };
+
+const SocialIcon = ({ href, icon }: { href: string; icon: React.ReactNode }) => (
+  <motion.a
+    href={href}
+    target="_blank"
+    whileHover={{ scale: 1.1, y: -2 }}
+    whileTap={{ scale: 0.9 }}
+    className="h-14 w-14 flex items-center justify-center rounded-2xl glass-panel border-white/60 text-gray-500 hover:text-gray-900 hover:bg-white/50 transition-all shadow-sm"
+  >
+    {icon}
+  </motion.a>
+);
 
 export default Header;
