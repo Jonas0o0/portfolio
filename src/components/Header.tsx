@@ -59,7 +59,13 @@ const Header = () => {
           </motion.p>
 
           <motion.div variants={itemVariants} className="flex flex-wrap justify-center lg:justify-start gap-4">
-            <a href="https://cv.jonas-facon.dev" className="px-8 py-4 bg-gray-900 text-white rounded-2xl font-bold hover:bg-gray-800 transition-all shadow-xl hover:scale-105 active:scale-95">
+            <a 
+              href="/documents/Jonas-Facon-CV.pdf" 
+              target="_blank" 
+              rel="noopener noreferrer" 
+              download="Jonas-Facon-CV.pdf"
+              className="px-8 py-4 bg-gray-900 text-white rounded-2xl font-bold hover:bg-gray-800 transition-all shadow-xl hover:scale-105 active:scale-95"
+            >
               Télécharger mon CV
             </a>
             <div className="flex gap-2">
