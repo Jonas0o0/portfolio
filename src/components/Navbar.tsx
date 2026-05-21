@@ -11,14 +11,13 @@ const Navbar = () => {
   useEffect(() => {
     const handleScroll = () => {
       const darkSections = ['experience', 'contact'];
-      const sections = ['home', 'about', 'skills', 'experience', 'education', 'contact'];
+      const sections = ['home', 'about', 'skills', 'professional', 'experience', 'education', 'contact'];
       
       let currentSection = '';
       for (const id of sections) {
         const element = document.getElementById(id);
         if (element) {
           const rect = element.getBoundingClientRect();
-          // Si le haut de la section est au-dessus du milieu de la navbar (ou proche du haut)
           if (rect.top <= 100) {
             currentSection = id;
           }
@@ -39,6 +38,7 @@ const Navbar = () => {
     { name: 'Accueil', href: '#home' },
     { name: 'À Propos', href: '#about' },
     { name: 'Compétences', href: '#skills' },
+    { name: 'Parcours', href: '#professional' },
     { name: 'Projets', href: '#experience' },
     { name: 'Études', href: '#education' },
   ];
