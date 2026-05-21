@@ -1,9 +1,16 @@
 'use client';
 
-import { Github, Linkedin, Mail, Sparkles, ArrowDown } from 'lucide-react';
+import { Github, Linkedin, Mail, Sparkles, ArrowDown, X } from 'lucide-react';
 import { motion, Variants } from 'framer-motion';
 import { Badge } from '@/components/ui/badge';
 import Hero3D from './Hero3D';
+import {
+  Dialog,
+  DialogContent,
+  DialogTrigger,
+  DialogClose,
+  DialogTitle,
+} from "@/components/ui/dialog";
 
 const Header = () => {
   const containerVariants: Variants = {
@@ -22,6 +29,16 @@ const Header = () => {
   const itemVariants: Variants = {
     hidden: { opacity: 0, y: 20 },
     visible: { opacity: 1, y: 0 },
+  };
+
+  const handleDownload = (e: React.MouseEvent) => {
+    // Empêche la propagation si nécessaire, mais ici on veut juste déclencher le download
+    const link = document.createElement('a');
+    link.href = "/documents/Jonas-Facon-CV.pdf";
+    link.download = "Jonas-Facon-CV.pdf";
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
   };
 
   return (
@@ -59,18 +76,32 @@ const Header = () => {
           </motion.p>
 
           <motion.div variants={itemVariants} className="flex flex-wrap justify-center lg:justify-start gap-4">
-            <a 
-              href="/documents/Jonas-Facon-CV.pdf" 
-              onClick={() => {
-                const link = document.createElement('a');
-                link.href = "/documents/Jonas-Facon-CV.pdf";
-                link.download = "Jonas-Facon-CV.pdf";
-                link.click();
-              }}
-              className="px-8 py-4 bg-gray-900 text-white rounded-2xl font-bold hover:bg-gray-800 transition-all shadow-xl hover:scale-105 active:scale-95"
-            >
-              Télécharger mon CV
-            </a>
+            <Dialog>
+              <DialogTrigger asChild>
+                <button 
+                  onClick={handleDownload}
+                  className="px-8 py-4 bg-gray-900 text-white rounded-2xl font-bold hover:bg-gray-800 transition-all shadow-xl hover:scale-105 active:scale-95"
+                >
+                  Télécharger mon CV
+                </button>
+              </DialogTrigger>
+              <DialogContent className="max-w-6xl h-[92vh] p-0 border-none bg-transparent shadow-none">
+                <DialogTitle className="sr-only">Mon CV - Jonas Facon</DialogTitle>
+                <div className="relative w-full h-full glass-panel rounded-[2rem] md:rounded-[3rem] overflow-hidden border-white/30 shadow-2xl flex flex-col">
+                   <div className="absolute top-6 right-6 z-50">
+                      <DialogClose className="p-3 bg-white/10 hover:bg-white/20 backdrop-blur-md rounded-full text-white transition-all border border-white/20">
+                         <X size={24} />
+                      </DialogClose>
+                   </div>
+                   <iframe 
+                     src="/documents/Jonas-Facon-CV.pdf#toolbar=0" 
+                     className="w-full h-full border-none" 
+                     title="Jonas Facon CV"
+                   />
+                </div>
+              </DialogContent>
+            </Dialog>
+
             <div className="flex gap-2">
               <SocialIcon href="https://www.linkedin.com/in/jonas-facon/" icon={<Linkedin size={20} />} />
               <SocialIcon href="mailto:jonas.facon@proton.me" icon={<Mail size={20} />} />
