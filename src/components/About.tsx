@@ -14,7 +14,7 @@ const About = () => {
           transition={{ duration: 1 }}
           className="order-2 lg:order-1"
         >
-          <h2 className="text-4xl md:text-6xl font-black tracking-tighter text-gray-900 mb-8">
+          <h2 className="text-6xl md:text-8xl font-black tracking-tighter text-gray-900 mb-8">
             À Propos<span className="text-pink-500">.</span>
           </h2>
           

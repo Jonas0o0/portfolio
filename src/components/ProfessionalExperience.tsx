@@ -12,7 +12,7 @@ const ProfessionalExperience = () => {
       role: "Stagiaire Développeur Full Stack (.NET / Angular)",
       period: "Mai 2026 – Juin 2026",
       location: "France",
-      logo: "https://adti.fr/wp-content/uploads/2021/04/cropped-logo-adti-1.png", // Attempting to use the site logo
+      logo: "/logos/logo-adti-icon-80.png",
       description: "Développement et amélioration d’une application de GMAO développée en Angular et .NET.",
       tasks: [
         "Mise en place d’un système de webhooks : création des entités, services, contrôleurs et intégration au système de notifications.",
@@ -34,7 +34,7 @@ const ProfessionalExperience = () => {
         viewport={{ once: true }}
         className="mb-20 text-center lg:text-left"
       >
-        <h2 className="text-4xl md:text-6xl font-black tracking-tighter text-gray-900 mb-4">
+        <h2 className="text-6xl md:text-8xl font-black tracking-tighter text-gray-900 mb-4">
           Parcours Pro<span className="text-purple-600">.</span>
         </h2>
         <div className="h-1 w-20 bg-purple-600 rounded-full mx-auto lg:mx-0"></div>

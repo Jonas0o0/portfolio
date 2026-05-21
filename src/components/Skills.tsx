@@ -45,7 +45,7 @@ export default function Skills() {
   return (
     <section id="skills" className="py-24 px-6 md:px-20 max-w-7xl mx-auto">
       <div className="mb-20">
-        <h2 className="text-4xl md:text-6xl font-black tracking-tighter text-gray-900 mb-4">
+        <h2 className="text-6xl md:text-8xl font-black tracking-tighter text-gray-900 mb-4">
           Compétences<span className="text-pink-500">.</span>
         </h2>
         <div className="h-1 w-20 bg-pink-500 rounded-full"></div>
