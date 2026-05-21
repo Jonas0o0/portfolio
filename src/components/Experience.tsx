@@ -42,14 +42,14 @@ const projects = [
 
 export default function Experience() {
   return (
-    <section id="experience" className="min-h-screen py-32 px-6 bg-gray-900 text-white relative overflow-hidden">
+    <section id="experience" className="w-full py-32 bg-gray-900 text-white relative overflow-hidden">
       {/* Background decoration */}
       <div className="absolute top-0 left-0 w-full h-full opacity-10 pointer-events-none">
         <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-purple-600 rounded-full blur-[150px]"></div>
         <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-blue-600 rounded-full blur-[150px]"></div>
       </div>
 
-      <div className="max-w-7xl mx-auto relative z-10">
+      <div className="max-w-7xl mx-auto px-6 md:px-20 relative z-10">
         <div className="flex flex-col md:flex-row justify-between items-end mb-24 gap-8">
           <div>
             <h2 className="text-6xl md:text-8xl font-black tracking-tighter">Projets<span className="text-purple-500">.</span></h2>

@@ -43,19 +43,21 @@ export default function Skills() {
   };
 
   return (
-    <section id="skills" className="py-24 px-6 md:px-20 max-w-7xl mx-auto">
-      <div className="mb-20">
-        <h2 className="text-6xl md:text-8xl font-black tracking-tighter text-gray-900 mb-4">
-          Compétences<span className="text-pink-500">.</span>
-        </h2>
-        <div className="h-1 w-20 bg-pink-500 rounded-full"></div>
-      </div>
+    <section id="skills" className="w-full py-24">
+      <div className="max-w-7xl mx-auto px-6 md:px-20">
+        <div className="mb-20 text-center lg:text-left">
+          <h2 className="text-6xl md:text-8xl font-black tracking-tighter text-gray-900 mb-4">
+            Compétences<span className="text-pink-500">.</span>
+          </h2>
+          <div className="h-1 w-20 bg-pink-500 rounded-full mx-auto lg:mx-0"></div>
+        </div>
 
-      <div className="grid grid-cols-1 lg:grid-cols-2 gap-16">
-        <SkillCategory title="Programmation" items={skills.programming} containerVariants={containerVariants} itemVariants={itemVariants} />
-        <SkillCategory title="Web Design & Dev" items={skills.web} containerVariants={containerVariants} itemVariants={itemVariants} />
-        <SkillCategory title="Bases de Données" items={skills.database} containerVariants={containerVariants} itemVariants={itemVariants} />
-        <SkillCategory title="Outils & DevOps" items={skills.tools} containerVariants={containerVariants} itemVariants={itemVariants} />
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16">
+          <SkillCategory title="Programmation" items={skills.programming} containerVariants={containerVariants} itemVariants={itemVariants} />
+          <SkillCategory title="Web Design & Dev" items={skills.web} containerVariants={containerVariants} itemVariants={itemVariants} />
+          <SkillCategory title="Bases de Données" items={skills.database} containerVariants={containerVariants} itemVariants={itemVariants} />
+          <SkillCategory title="Outils & DevOps" items={skills.tools} containerVariants={containerVariants} itemVariants={itemVariants} />
+        </div>
       </div>
     </section>
   );

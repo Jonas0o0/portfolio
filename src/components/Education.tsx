@@ -22,11 +22,11 @@ const Education = () => {
   ];
 
   return (
-    <section id="education" className="min-h-screen py-32 px-6 md:px-20 max-w-7xl mx-auto flex flex-col items-center lg:items-start justify-center relative overflow-hidden">
+    <section id="education" className="w-full py-32 relative overflow-hidden">
        {/* Background decoration */}
       <div className="absolute top-0 right-0 w-1/2 h-full bg-purple-500/[0.02] -skew-x-12 pointer-events-none"></div>
 
-      <div className="w-full z-10">
+      <div className="max-w-7xl mx-auto px-6 md:px-20 z-10">
         <motion.div
           initial={{ opacity: 0, x: -50 }}
           whileInView={{ opacity: 1, x: 0 }}
