@@ -27,7 +27,7 @@ const ProfessionalExperience = () => {
   ];
 
   return (
-    <section id="professional" className="py-24 px-6 md:px-20 max-w-5xl mx-auto">
+    <section id="professional" className="py-24 px-6 md:px-20 max-w-7xl mx-auto">
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
@@ -40,7 +40,7 @@ const ProfessionalExperience = () => {
         <div className="h-1 w-20 bg-purple-600 rounded-full mx-auto lg:mx-0"></div>
       </motion.div>
 
-      <div className="space-y-12">
+      <div className="space-y-12 max-w-5xl">
         {experiences.map((exp, index) => (
           <motion.div
             key={exp.company}

@@ -5,7 +5,7 @@ import { motion } from 'framer-motion';
 
 const Contact = () => {
   return (
-    <section id="contact" className="min-h-screen py-32 px-6 flex flex-col items-center justify-center bg-gray-900 text-white relative overflow-hidden">
+    <section id="contact" className="min-h-screen py-32 px-6 md:px-20 max-w-7xl mx-auto flex flex-col items-center justify-center bg-gray-900 text-white relative overflow-hidden">
       {/* Background Glow */}
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-purple-600/10 rounded-full blur-[120px] pointer-events-none"></div>
 
@@ -14,7 +14,7 @@ const Contact = () => {
         whileInView={{ opacity: 1, scale: 1 }}
         viewport={{ once: true }}
         transition={{ duration: 1 }}
-        className="text-center z-10 max-w-4xl"
+        className="text-center z-10 w-full max-w-4xl"
       >
         <h2 className="text-5xl md:text-7xl font-black tracking-tighter leading-tight mb-12">
           Parlons de votre prochain <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-500 underline decoration-purple-500/30">projet</span>.
