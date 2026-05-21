@@ -61,7 +61,7 @@ const Navbar = () => {
             <Link 
               href={link.href} 
               className={cn(
-                "relative block px-4 py-2 text-xs md:text-sm font-black uppercase tracking-[0.2em] transition-colors duration-500",
+                "relative block px-4 py-2 text-xs md:text-sm font-black uppercase tracking-[0.2em] transition-colors duration-500 whitespace-nowrap",
                 isDark ? "text-gray-400 hover:text-white" : "text-gray-500 hover:text-gray-900"
               )}
             >
