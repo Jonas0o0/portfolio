@@ -118,7 +118,7 @@ function FeaturedExperience({ exp, index }: { exp: any; index: number }) {
 
         <div className="pt-8 flex flex-wrap gap-3">
           {exp.tags.map((tag: string) => (
-            <span key={tag} className="text-[11px] font-black uppercase tracking-widest text-gray-700 bg-gray-200/50 px-4 py-2 rounded-xl border border-gray-300/50 hover:border-orange-300 transition-colors shadow-sm">
+            <span key={tag} className="text-[11px] font-black uppercase tracking-widest text-gray-700 bg-gray-200/50 px-4 py-2 rounded-xl border border-gray-300/50 hover:border-orange-300 transition-colors">
                {tag}
             </span>
           ))}
