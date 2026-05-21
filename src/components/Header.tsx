@@ -85,16 +85,16 @@ const Header = () => {
                   Télécharger mon CV
                 </button>
               </DialogTrigger>
-              <DialogContent className="max-w-6xl h-[92vh] p-0 border-none bg-transparent shadow-none">
+              <DialogContent className="max-w-7xl w-full h-screen p-0 border-none bg-transparent shadow-none rounded-none">
                 <DialogTitle className="sr-only">Mon CV - Jonas Facon</DialogTitle>
-                <div className="relative w-full h-full glass-panel rounded-[2rem] md:rounded-[3rem] overflow-hidden border-white/30 shadow-2xl flex flex-col">
-                   <div className="absolute top-6 right-6 z-50">
-                      <DialogClose className="p-3 bg-white/10 hover:bg-white/20 backdrop-blur-md rounded-full text-white transition-all border border-white/20">
+                <div className="relative w-full h-full glass-panel rounded-none overflow-hidden border-white/10 shadow-2xl flex flex-col">
+                   <div className="absolute top-4 right-4 z-50">
+                      <DialogClose className="p-2 bg-gray-900/60 hover:bg-gray-900/80 backdrop-blur-md rounded-full text-white transition-all border border-white/10">
                          <X size={24} />
                       </DialogClose>
                    </div>
                    <iframe 
-                     src="/documents/Jonas-Facon-CV.pdf#toolbar=0" 
+                     src="/documents/Jonas-Facon-CV.pdf#toolbar=0&navpanes=0&view=FitH" 
                      className="w-full h-full border-none" 
                      title="Jonas Facon CV"
                    />
