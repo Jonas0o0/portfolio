@@ -45,11 +45,11 @@ const Navbar = () => {
 
   return (
     <motion.nav 
-      initial={{ y: -50, x: '-50%', opacity: 0 }}
+      initial={{ y: -150, x: '-50%', opacity: 0 }}
       animate={{ y: 0, x: '-50%', opacity: 1 }}
-      transition={{ duration: 1, ease: [0.22, 1, 0.36, 1] }}
+      transition={{ duration: 1.2, ease: [0.22, 1, 0.36, 1] }}
       className={cn(
-        "fixed top-8 left-1/2 z-50 px-6 py-3 rounded-2xl border transition-all duration-500 shadow-xl",
+        "fixed top-8 left-1/2 z-50 px-6 py-3 rounded-2xl border shadow-xl",
         isDark 
           ? "bg-gray-900/80 backdrop-blur-xl border-white/10 shadow-black/20" 
           : "glass-panel border-white/60 shadow-gray-200/50"
