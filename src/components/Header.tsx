@@ -134,9 +134,10 @@ const SocialIcon = ({ href, icon }: { href: string; icon: React.ReactNode }) => 
     href={href}
     target="_blank"
     whileHover={{ 
-      boxShadow: "inset 4px 4px 8px rgba(0, 0, 0, 0.1), inset -4px -4px 8px rgba(255, 255, 255, 0.8), 0px 0px 0px rgba(0,0,0,0)",
+      boxShadow: "inset 4px 4px 10px rgba(0, 0, 0, 0.12), inset -2px -2px 10px rgba(255, 255, 255, 0.3), 0px 0px 0px transparent",
       y: 1,
-      borderColor: "rgba(255, 255, 255, 0.1)",
+      borderColor: "transparent",
+      backgroundColor: "rgba(255, 255, 255, 0.05)",
     }}
     whileTap={{ scale: 0.95 }}
     transition={{ type: "spring", stiffness: 600, damping: 25 }}
