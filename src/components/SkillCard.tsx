@@ -14,10 +14,11 @@ const SkillCard = ({ icon, name }: SkillCardProps) => {
       whileHover={{ 
         boxShadow: "inset 4px 4px 8px rgba(0, 0, 0, 0.1), inset -4px -4px 8px rgba(255, 255, 255, 0.8), 0px 0px 0px rgba(0,0,0,0)",
         y: 1,
+        borderColor: "rgba(255, 255, 255, 0.1)",
       }}
       whileTap={{ y: 2, scale: 0.98 }}
       transition={{ type: "spring", stiffness: 600, damping: 25 }}
-      className="relative flex items-center gap-4 px-6 py-4 rounded-2xl glass-panel border-white/40 cursor-default transition-colors duration-200"
+      className="relative flex items-center gap-4 px-6 py-4 rounded-2xl glass-panel border border-white/40 cursor-default transition-all duration-200"
     >
       <div className="relative w-10 h-10 flex items-center justify-center pointer-events-none">
         <Image width="40" height="40" src={icon} alt={`${name} logo`} className="object-contain" />

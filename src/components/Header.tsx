@@ -136,10 +136,11 @@ const SocialIcon = ({ href, icon }: { href: string; icon: React.ReactNode }) => 
     whileHover={{ 
       boxShadow: "inset 4px 4px 8px rgba(0, 0, 0, 0.1), inset -4px -4px 8px rgba(255, 255, 255, 0.8), 0px 0px 0px rgba(0,0,0,0)",
       y: 1,
+      borderColor: "rgba(255, 255, 255, 0.1)",
     }}
-    whileTap={{ y: 2, scale: 0.95 }}
+    whileTap={{ scale: 0.95 }}
     transition={{ type: "spring", stiffness: 600, damping: 25 }}
-    className="h-14 w-14 flex items-center justify-center rounded-2xl glass-panel border-white/60 text-gray-500 hover:text-gray-900 shadow-sm transition-all"
+    className="h-14 w-14 flex items-center justify-center rounded-2xl glass-panel border border-white/60 text-gray-500 hover:text-gray-900 shadow-sm transition-all"
   >
     {icon}
   </motion.a>
