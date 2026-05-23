@@ -14,7 +14,6 @@ const SkillCard = ({ icon, name }: SkillCardProps) => {
       whileHover={{ 
         boxShadow: "inset 2px 2px 5px rgba(0, 0, 0, 0.08), inset -1px -1px 5px rgba(255, 255, 255, 0.2), 0px 0px 0px transparent",
         borderColor: "transparent",
-        backgroundColor: "rgba(255, 255, 255, 0.05)",
       }}
       whileTap={{ scale: 0.98 }}
       transition={{ type: "spring", stiffness: 600, damping: 25 }}
