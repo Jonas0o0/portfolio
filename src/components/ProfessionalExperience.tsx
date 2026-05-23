@@ -12,7 +12,7 @@ const ProfessionalExperience = () => {
       role: "Stagiaire Développeur Full Stack",
       stack: ".NET / Angular",
       period: "Mai 2026 – Juin 2026",
-      logo: "/logos/logo-adti-icon-80.png",
+      logo: "/logos/logo-adti-icon-80.jpegok",
       color: "from-orange-500 to-amber-600",
       accent: "text-orange-600",
       bgAccent: "bg-orange-600",
