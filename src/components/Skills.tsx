@@ -7,31 +7,31 @@ const skills = {
     languages: [
         { name: 'Java', icon: '/logos/java-icon.svg' },
         { name: 'C#', icon: '/logos/csharp.svg' },
+        { name: 'TypeScript', icon: '/logos/typescript.svg' },
         { name: 'Python', icon: '/logos/python-logo-only.svg' },
         { name: 'C', icon: '/logos/C_Programming_Language.svg' },
+        { name: 'JS', icon: '/logos/javascript-seeklogo.png' },
     ],
-    frontend: [
-        { name: 'TypeScript', icon: '/logos/typescript.svg' },
+    frameworks: [
         { name: 'Next.js', icon: '/logos/nextjs-icon-svgrepo-com.svg' },
         { name: 'React', icon: '/logos/React-Logo.svg' },
         { name: 'Angular', icon: '/logos/angular.svg' },
+        { name: '.NET', icon: '/logos/dotnet.svg' },
         { name: 'Tailwind', icon: '/logos/tailwindcss.svg' },
         { name: 'Three.js', icon: '/logos/threejs.svg' },
         { name: 'Framer', icon: '/logos/framer-motion.svg' },
+        { name: 'Node-RED', icon: '/logos/node-red.svg' },
         { name: 'HTML', icon: '/logos/HTML5-Logo.svg' },
         { name: 'CSS', icon: '/logos/w3_css-official.svg' },
-        { name: 'JS', icon: '/logos/javascript-seeklogo.png' },
     ],
-    backend: [
-        { name: '.NET', icon: '/logos/dotnet.svg' },
-        { name: 'Node-RED', icon: '/logos/node-red.svg' },
+    database: [
         { name: 'PostgreSQL', icon: '/logos/PostgreSQL_logo.3colors.svg' },
         { name: 'SQL', icon: '/logos/sqlitebrowser.png' },
         { name: 'JDBC', icon: '/logos/java-icon.svg' },
     ],
-    devops: [
-        { name: 'Docker', icon: '/logos/docker-mark-blue.svg' },
+    tools: [
         { name: 'Git', icon: '/logos/Git-Icon-1788C.svg' },
+        { name: 'Docker', icon: '/logos/docker-mark-blue.svg' },
         { name: 'Linux', icon: '/logos/linux.svg' },
         { name: 'Mosquitto', icon: '/logos/mosquitto.svg' },
         { name: 'Dokploy', icon: '/logos/dokploy.svg' },
@@ -68,9 +68,9 @@ export default function Skills() {
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-x-20 gap-y-24">
           <SkillCategory title="Langages" items={skills.languages} containerVariants={containerVariants} itemVariants={itemVariants} />
-          <SkillCategory title="Frontend & Design" items={skills.frontend} containerVariants={containerVariants} itemVariants={itemVariants} />
-          <SkillCategory title="Backend & Données" items={skills.backend} containerVariants={containerVariants} itemVariants={itemVariants} />
-          <SkillCategory title="DevOps & Outils" items={skills.devops} containerVariants={containerVariants} itemVariants={itemVariants} />
+          <SkillCategory title="Frameworks & Bibliothèques" items={skills.frameworks} containerVariants={containerVariants} itemVariants={itemVariants} />
+          <SkillCategory title="Bases de données" items={skills.database} containerVariants={containerVariants} itemVariants={itemVariants} />
+          <SkillCategory title="Outils & DevOps" items={skills.tools} containerVariants={containerVariants} itemVariants={itemVariants} />
         </div>
       </div>
     </section>
