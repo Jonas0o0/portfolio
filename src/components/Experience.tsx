@@ -1,8 +1,8 @@
 'use client';
 
 import { Github, ExternalLink, ArrowRight } from 'lucide-react';
-import { motion, useScroll, useTransform } from 'framer-motion';
-import { useRef } from 'react';
+import { motion, useScroll, useTransform, AnimatePresence } from 'framer-motion';
+import { useRef, useState, useEffect } from 'react';
 import { Badge } from '@/components/ui/badge';
 
 const projects = [
@@ -12,7 +12,8 @@ const projects = [
     "language": "TypeScript",
     "html_url": "https://github.com/Jonas0o0/portfolio",
     "category": "Personnal",
-    "color": "from-purple-500 to-indigo-500"
+    "color": "from-purple-500 to-indigo-500",
+    "images": ["/images/projets/Portfolio/1.png"]
   },
   {
     "name": "EcoDrop API",
@@ -21,7 +22,8 @@ const projects = [
     "html_url": "https://github.com/edihamiti/ecodrop-api",
     "homepage": "https://ecodrop.jonas-facon.dev/docs",
     "category": "Academic",
-    "color": "from-emerald-500 to-teal-500"
+    "color": "from-emerald-500 to-teal-500",
+    "images": ["/images/projets/Ecodrop/1.png"]
   },
   {
     "name": "Dys-Parus",
@@ -29,7 +31,12 @@ const projects = [
     "language": "Java",
     "html_url": "https://github.com/Jonas0o0/Labyrinthe-des-Dys-Parus",
     "category": "Academic",
-    "color": "from-pink-500 to-rose-500"
+    "color": "from-pink-500 to-rose-500",
+    "images": [
+      "/images/projets/Dys-parus/1.png",
+      "/images/projets/Dys-parus/2.png",
+      "/images/projets/Dys-parus/3.png"
+    ]
   },
   {
     "name": "Kass-Brikerie",
@@ -37,7 +44,13 @@ const projects = [
     "language": "Java",
     "html_url": "https://github.com/Jonas0o0/Kass-Brikerie",
     "category": "Academic",
-    "color": "from-blue-500 to-cyan-500"
+    "color": "from-blue-500 to-cyan-500",
+    "images": [
+      "/images/projets/Kass-Brikerie/1.png",
+      "/images/projets/Kass-Brikerie/2.png",
+      "/images/projets/Kass-Brikerie/3.png",
+      "/images/projets/Kass-Brikerie/4.png"
+    ]
   },
   {
     "name": "Cryptodec",
@@ -45,7 +58,12 @@ const projects = [
     "language": "TypeScript",
     "html_url": "https://github.com/Jonas0o0/cryptodec",
     "category": "Personnal",
-    "color": "from-orange-500 to-yellow-500"
+    "color": "from-orange-500 to-yellow-500",
+    "images": [
+      "/images/projets/Cryptodec/1.png",
+      "/images/projets/Cryptodec/2.png",
+      "/images/projets/Cryptodec/3.png"
+    ]
   }
 ];
 
@@ -85,6 +103,17 @@ function ProjectItem({ project, index }: { project: any; index: number }) {
     offset: ["start end", "end start"]
   });
 
+  const [currentImageIndex, setCurrentImageIndex] = useState(0);
+
+  useEffect(() => {
+    if (project.images && project.images.length > 1) {
+      const timer = setInterval(() => {
+        setCurrentImageIndex((prev) => (prev + 1) % project.images.length);
+      }, 3000);
+      return () => clearInterval(timer);
+    }
+  }, [project.images]);
+
   const y = useTransform(scrollYProgress, [0, 1], [0, -100]);
   const isEven = index % 2 === 0;
 
@@ -97,7 +126,22 @@ function ProjectItem({ project, index }: { project: any; index: number }) {
           className={`aspect-video rounded-3xl overflow-hidden bg-gradient-to-br ${project.color} p-1`}
         >
           <div className="w-full h-full bg-gray-800 rounded-[1.4rem] flex items-center justify-center relative overflow-hidden group-hover:bg-transparent transition-colors duration-700">
-             <Github size={120} className="text-gray-700 group-hover:text-white group-hover:scale-110 transition-all duration-700 opacity-20 group-hover:opacity-100" />
+             {project.images && project.images.length > 0 ? (
+               <AnimatePresence mode="wait">
+                 <motion.img
+                   key={project.images[currentImageIndex]}
+                   src={project.images[currentImageIndex]}
+                   alt={project.name}
+                   initial={{ opacity: 0, scale: 1.1 }}
+                   animate={{ opacity: 1, scale: 1 }}
+                   exit={{ opacity: 0, scale: 0.95 }}
+                   transition={{ duration: 0.8, ease: "easeInOut" }}
+                   className="w-full h-full object-cover"
+                 />
+               </AnimatePresence>
+             ) : (
+               <Github size={120} className="text-gray-700 group-hover:text-white group-hover:scale-110 transition-all duration-700 opacity-20 group-hover:opacity-100" />
+             )}
              
              {/* Abstract Shapes */}
              <div className="absolute top-0 right-0 w-32 h-32 bg-white opacity-5 rotate-45 translate-x-16 -translate-y-16 group-hover:translate-x-12 group-hover:-translate-y-12 transition-transform duration-700"></div>
