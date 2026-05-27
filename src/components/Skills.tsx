@@ -11,6 +11,8 @@ const skills = {
         { name: 'Python', icon: '/logos/python-logo-only.svg' },
         { name: 'C', icon: '/logos/C_Programming_Language.svg' },
         { name: 'JS', icon: '/logos/javascript-seeklogo.png' },
+        { name: 'HTML', icon: '/logos/HTML5-Logo.svg' },
+        { name: 'CSS', icon: '/logos/w3_css-official.svg' },
     ],
     frameworks: [
         { name: 'Next.js', icon: '/logos/nextjs-icon-svgrepo-com.svg' },
@@ -21,8 +23,6 @@ const skills = {
         { name: 'Three.js', icon: '/logos/threejs.svg' },
         { name: 'Framer', icon: '/logos/framer-motion.svg' },
         { name: 'Node-RED', icon: '/logos/node-red.svg' },
-        { name: 'HTML', icon: '/logos/HTML5-Logo.svg' },
-        { name: 'CSS', icon: '/logos/w3_css-official.svg' },
     ],
     database: [
         { name: 'PostgreSQL', icon: '/logos/PostgreSQL_logo.3colors.svg' },
