@@ -58,7 +58,7 @@ export default function Skills() {
   };
 
   return (
-    <section id="skills" className="w-full py-24 bg-white/10">
+    <section id="skills" className="w-full py-32">
       <div className="max-w-7xl mx-auto px-6 md:px-20">
         <div className="mb-24 text-center lg:text-left">
           <h2 className="text-6xl md:text-8xl font-black tracking-tighter text-gray-900 mb-4">
@@ -67,7 +67,7 @@ export default function Skills() {
           <div className="h-1 w-20 bg-pink-500 rounded-full mx-auto lg:mx-0"></div>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-24">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-x-20 gap-y-24">
           <SkillCategory title="Programmation & Backend" items={skills.programming} containerVariants={containerVariants} itemVariants={itemVariants} />
           <SkillCategory title="Frontend & Design" items={skills.frontend} containerVariants={containerVariants} itemVariants={itemVariants} />
           <SkillCategory title="Infrastructure & Data" items={skills.backend} containerVariants={containerVariants} itemVariants={itemVariants} />
@@ -90,7 +90,7 @@ function SkillCategory({ title, items, containerVariants, itemVariants }: any) {
         initial="hidden"
         whileInView="visible"
         viewport={{ once: true }}
-        className="grid grid-cols-2 sm:grid-cols-3 gap-4"
+        className="flex flex-wrap gap-4"
       >
         {items.map((skill: any) => (
           <motion.div key={skill.name} variants={itemVariants}>
