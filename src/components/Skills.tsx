@@ -7,32 +7,35 @@ const skills = {
     programming: [
         { name: 'Java', icon: '/logos/java-icon.svg' },
         { name: 'C#', icon: '/logos/csharp.svg' },
-        { name: 'Python', icon: '/logos/python-logo-only.svg' },
         { name: 'TypeScript', icon: '/logos/typescript.svg' },
+        { name: 'Python', icon: '/logos/python-logo-only.svg' },
+        { name: 'C++', icon: '/logos/cpp.svg' },
         { name: 'C', icon: '/logos/C_Programming_Language.svg' },
     ],
-    web: [
+    frontend: [
         { name: 'Next.js', icon: '/logos/nextjs-icon-svgrepo-com.svg' },
         { name: 'React', icon: '/logos/React-Logo.svg' },
         { name: 'Angular', icon: '/logos/angular.svg' },
-        { name: '.NET', icon: '/logos/dotnet.svg' },
+        { name: 'Tailwind', icon: '/logos/tailwindcss.svg' },
         { name: 'Three.js', icon: '/logos/threejs.svg' },
-        { name: 'Framer Motion', icon: '/logos/framer-motion.svg' },
+        { name: 'Framer', icon: '/logos/framer-motion.svg' },
         { name: 'HTML', icon: '/logos/HTML5-Logo.svg' },
         { name: 'CSS', icon: '/logos/w3_css-official.svg' },
         { name: 'JS', icon: '/logos/javascript-seeklogo.png' },
     ],
-    database: [
+    backend: [
+        { name: '.NET', icon: '/logos/dotnet.svg' },
+        { name: 'Node-RED', icon: '/logos/node-red.svg' },
         { name: 'PostgreSQL', icon: '/logos/PostgreSQL_logo.3colors.svg' },
         { name: 'SQL', icon: '/logos/sqlitebrowser.png' },
         { name: 'JDBC', icon: '/logos/java-icon.svg' },
     ],
-    tools: [
+    devops: [
         { name: 'Docker', icon: '/logos/docker-mark-blue.svg' },
         { name: 'Git', icon: '/logos/Git-Icon-1788C.svg' },
-        { name: 'Dokploy', icon: '/logos/dokploy.svg' },
-        { name: 'Node-RED', icon: '/logos/node-red.svg' },
+        { name: 'Linux', icon: '/logos/linux.svg' },
         { name: 'Mosquitto', icon: '/logos/mosquitto.svg' },
+        { name: 'Dokploy', icon: '/logos/dokploy.svg' },
     ],
 };
 
@@ -46,29 +49,29 @@ export default function Skills() {
   };
 
   const itemVariants = {
-    hidden: { opacity: 0, y: 20 },
+    hidden: { opacity: 0, y: 15 },
     visible: { 
       opacity: 1, 
       y: 0,
-      transition: { duration: 0.5 }
+      transition: { duration: 0.4 }
     },
   };
 
   return (
-    <section id="skills" className="w-full py-24">
+    <section id="skills" className="w-full py-24 bg-white/10">
       <div className="max-w-7xl mx-auto px-6 md:px-20">
-        <div className="mb-20 text-center lg:text-left">
+        <div className="mb-24 text-center lg:text-left">
           <h2 className="text-6xl md:text-8xl font-black tracking-tighter text-gray-900 mb-4">
             Compétences<span className="text-pink-500">.</span>
           </h2>
           <div className="h-1 w-20 bg-pink-500 rounded-full mx-auto lg:mx-0"></div>
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-x-16 gap-y-20">
-          <SkillCategory title="Programmation" items={skills.programming} containerVariants={containerVariants} itemVariants={itemVariants} />
-          <SkillCategory title="Web & Frameworks" items={skills.web} containerVariants={containerVariants} itemVariants={itemVariants} />
-          <SkillCategory title="Bases de Données" items={skills.database} containerVariants={containerVariants} itemVariants={itemVariants} />
-          <SkillCategory title="Outils & DevOps" items={skills.tools} containerVariants={containerVariants} itemVariants={itemVariants} />
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-24">
+          <SkillCategory title="Programmation & Backend" items={skills.programming} containerVariants={containerVariants} itemVariants={itemVariants} />
+          <SkillCategory title="Frontend & Design" items={skills.frontend} containerVariants={containerVariants} itemVariants={itemVariants} />
+          <SkillCategory title="Infrastructure & Data" items={skills.backend} containerVariants={containerVariants} itemVariants={itemVariants} />
+          <SkillCategory title="Outils & DevOps" items={skills.devops} containerVariants={containerVariants} itemVariants={itemVariants} />
         </div>
       </div>
     </section>
@@ -77,9 +80,9 @@ export default function Skills() {
 
 function SkillCategory({ title, items, containerVariants, itemVariants }: any) {
   return (
-    <div className="space-y-8">
-      <h3 className="text-xl font-bold text-gray-400 uppercase tracking-widest flex items-center gap-3">
-        <span className="w-8 h-[2px] bg-pink-500/30"></span>
+    <div className="space-y-10">
+      <h3 className="text-xs font-black text-gray-400 uppercase tracking-[0.3em] flex items-center gap-4">
+        <span className="w-12 h-[2px] bg-pink-500"></span>
         {title}
       </h3>
       <motion.div 
@@ -87,7 +90,7 @@ function SkillCategory({ title, items, containerVariants, itemVariants }: any) {
         initial="hidden"
         whileInView="visible"
         viewport={{ once: true }}
-        className="flex flex-wrap gap-4"
+        className="grid grid-cols-2 sm:grid-cols-3 gap-4"
       >
         {items.map((skill: any) => (
           <motion.div key={skill.name} variants={itemVariants}>
