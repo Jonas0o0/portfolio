@@ -12,10 +12,10 @@ const Education = () => {
       logo: "/logos/univ.jpeg",
       date: "Depuis 2024",
       description: [
-        "Spécialisation **'Réalisation d'applications'** axée sur l'ingénierie logicielle et la conception robuste.",
-        "Maîtrise du cycle de vie logiciel : **Conception OO (Java)**, Design Patterns et validation par tests unitaires.",
-        "Développement **Full-stack** avec intégration de bases de données avancées (**SQL/NoSQL**) et administration réseaux.",
-        "Conduite de projets complexes en mode **Agile (Scrum)** au travers des Situations d'Apprentissage et d'Évaluation (**SAÉ**)."
+        "Spécialisation 'Réalisation d'applications' axée sur l'ingénierie logicielle et la conception robuste.",
+        "Maîtrise du cycle de vie logiciel : Conception OO (Java), Design Patterns et validation par tests unitaires.",
+        "Développement Full-stack avec intégration de bases de données avancées (SQL) et administration réseaux.",
+        "Conduite de projets complexes en mode Agile (Scrum) au travers des Situations d'Apprentissage et d'Évaluation (SAÉ)."
       ]
     },
     {
@@ -26,10 +26,10 @@ const Education = () => {
       logo: "/logos/lycee.png",
       date: "2021 - 2024",
       description: [
-        "Double spécialité **NSI** (Numérique et Sciences Informatiques) et **Mathématiques**.",
-        "Option **Mathématiques Expertes** : Arithmétique, nombres complexes et théorie des graphes pour l'algorithmique.",
-        "Développement **Python avancé** (POO, récursivité), gestion de bases de données SQL et administration système Linux.",
-        "Projets : Création d'applications interactives et exploration approfondie des **couches réseaux (TCP/IP)**."
+        "Spécialités suivies : Mathématiques, NSI (Numérique et Sciences Informatiques) et Physique-Chimie en classe de Première.",
+        "Spécialités conservées en Terminale : Mathématiques et NSI.",
+        "Option Mathématiques Expertes : Approfondissement en arithmétique, nombres complexes et théorie des graphes.",
+        "Développement Python (POO, récursivité), gestion de bases de données SQL et administration système Linux."
       ]
     }
   ];
@@ -89,8 +89,9 @@ const Education = () => {
                     <p 
                       key={pIndex} 
                       className="text-xl text-gray-600 leading-relaxed max-w-2xl text-justify"
-                      dangerouslySetInnerHTML={{ __html: paragraph.replace(/\*\*(.*?)\*\*/g, '<strong class="text-gray-900 font-black">$1</strong>') }}
-                    />
+                    >
+                      {paragraph}
+                    </p>
                   ))}
                 </div>
               </div>
