@@ -5,12 +5,12 @@ import { motion } from 'framer-motion';
 const Education = () => {
   const educationData = [
     {
-      title: "BUT Informatique",
+      title: "BUT Informatique - Parcours A",
       institution: "Université de Lille",
       campus: "IUT de Lille - Université de Lille",
       logo: "/logos/univ.jpeg",
       date: "Depuis 2024",
-      description: "Formation axée sur la pratique avec des matières comme :\nJava, Technologies Web (HTML, CSS, JS), Réseaux & Systèmes, Communication.",
+      description: "Spécialisation 'Réalisation d'applications' axée sur l'ingénierie logicielle.\nMaîtrise du cycle de vie des applications : conception orientée objet (Java), Design Patterns et validation par tests unitaires.\nDéveloppement Full-stack avec intégration de bases de données avancées (SQL/NoSQL) et administration réseaux.\nConduite de projets complexes en mode Agile (Scrum) au travers des SAÉ (Situation d'Apprentissage et d'Évaluation).",
     },
     {
       title: "Baccalauréat Général - Mention Bien",
@@ -18,7 +18,7 @@ const Education = () => {
       campus: "Lycée Gustave Eiffel, Armentières",
       logo: "/logos/lycee.png",
       date: "2021 - 2024",
-      description: "Spécialités : Mathématiques et Numérique et Sciences Informatiques (NSI).\nOption : Mathématiques Expertes.\nAutres matières : Python, Anglais, Espagnol.",
+      description: "Double spécialité NSI (Numérique et Sciences Informatiques) et Mathématiques.\nOption Mathématiques Expertes : Arithmétique, nombres complexes et théorie des graphes pour l'algorithmique.\nNSI : Développement Python avancé (POO, récursivité), gestion de bases de données SQL et administration système Linux.\nProjets : Création d'applications interactives et exploration des couches réseaux (TCP/IP).",
     }
   ];
 
