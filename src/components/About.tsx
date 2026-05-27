@@ -39,7 +39,8 @@ const About = () => {
                 </div>
                 <div>
                   <h4 className="text-xs uppercase tracking-widest font-black text-pink-500 mb-2">Objectif</h4>
-                  <p className="text-sm font-medium">Mettre mes compétences au service de projets concrets et continuer à apprendre.</p>
+                  {/* <p className="text-sm font-medium">Mettre mes compétences au service de projets concrets et continuer à apprendre.</p> */}
+                  <p className="text-sm font-medium">Découvrir le monde de la R&D via un stage en laboratoire de recherche (Cristal) pour l&apos;année prochaine.</p>
                 </div>
               </div>
             </div>

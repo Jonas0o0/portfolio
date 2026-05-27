@@ -17,7 +17,8 @@ const projects = [
   },
   {
     "name": "EcoDrop API",
-    "description": "API REST robuste pour la gestion intelligente des déchets. Authentification OAuth2 multi-fournisseurs (Google, GitHub, Discord), gestion de sessions JWT et monitoring en temps réel des capacités de collecte.",
+    "description": "API REST robuste pour la gestion intelligente des déchets. J'ai réalisé 50% du backend, incluant l'implémentation de l'authentification OAuth2 multi-fournisseurs (Google, GitHub, Discord) et le monitoring temps réel.",
+    // "description": "API REST robuste pour la gestion intelligente des déchets. Authentification OAuth2 multi-fournisseurs (Google, GitHub, Discord), gestion de sessions JWT et monitoring en temps réel des capacités de collecte.",
     "language": "Java",
     "html_url": "https://github.com/edihamiti/ecodrop-api",
     "homepage": "https://ecodrop.jonas-facon.dev/docs",
@@ -27,7 +28,8 @@ const projects = [
   },
   {
     "name": "Dys-Parus",
-    "description": "Jeu de labyrinthe expérimental en Java. Une exploration ludique de la perception et du changement de perspective à travers plusieurs niveaux évolutifs.",
+    "description": "Jeu de labyrinthe expérimental en Java. En tant que Lead Developer, j'ai assuré 70% de la réalisation technique pour soutenir l'équipe, tout en explorant des mécaniques de changement de perspective complexes.",
+    // "description": "Jeu de labyrinthe expérimental en Java. Une exploration ludique de la perception et du changement de perspective à travers plusieurs niveaux évolutifs.",
     "language": "Java",
     "html_url": "https://github.com/Jonas0o0/Labyrinthe-des-Dys-Parus",
     "category": "Academic",
@@ -40,7 +42,8 @@ const projects = [
   },
   {
     "name": "Kass-Brikerie",
-    "description": "Casse-brique moderne développé en mode agile. Une démonstration de collaboration technique et de gestion de projet au sein d'une équipe de 6 développeurs.",
+    "description": "Casse-brique moderne en mode agile (Scrum Master & Dev). J'ai conçu l'intégralité du moteur physique : gestion des rebonds (murs, briques, pad) et système de destruction dynamique des éléments.",
+    // "description": "Casse-brique moderne développé en mode agile. Une démonstration de collaboration technique et de gestion de projet au sein d'une équipe de 6 développeurs.",
     "language": "Java",
     "html_url": "https://github.com/Jonas0o0/Kass-Brikerie",
     "category": "Academic",
@@ -54,7 +57,8 @@ const projects = [
   },
   {
     "name": "Cryptodec",
-    "description": "Solution d'analyse et de déclaration fiscale pour portefeuilles multi-chaînes. Simplifier la complexité de l'écosystème crypto.",
+    "description": "Projet solo intégral : solution d'analyse et de déclaration fiscale pour portefeuilles multi-chaînes. Gestion de la complexité des flux de données blockchain et calculs de plus-values.",
+    // "description": "Solution d'analyse et de déclaration fiscale pour portefeuilles multi-chaînes. Simplifier la complexité de l'écosystème crypto.",
     "language": "TypeScript",
     "html_url": "https://github.com/Jonas0o0/cryptodec",
     "category": "Personnal",
