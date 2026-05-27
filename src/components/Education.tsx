@@ -1,7 +1,6 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import { Award, GraduationCap } from 'lucide-react';
 
 const Education = () => {
   const educationData = [
@@ -43,27 +42,32 @@ const Education = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.8 }}
-              className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start"
+              className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center"
             >
-              {/* Visual Side */}
+              {/* Visual Block - Matching Professional Style */}
               <div className="lg:col-span-4 relative group">
-                <div className={`aspect-video lg:aspect-square rounded-[2rem] overflow-hidden bg-gradient-to-br ${item.color} p-0.5 shadow-xl`}>
-                  <div className="w-full h-full bg-white/10 backdrop-blur-xl flex items-center justify-center relative">
+                <div className={`aspect-square rounded-[2.5rem] overflow-hidden bg-gradient-to-br ${item.color} p-1 shadow-2xl`}>
+                  <div className="w-full h-full bg-gray-50 rounded-[2.3rem] flex flex-col items-center justify-center relative overflow-hidden group-hover:bg-transparent transition-colors duration-700">
+                    {/* Faded logo background decoration */}
+                    <div className="absolute inset-0 opacity-[0.03] group-hover:opacity-10 transition-opacity duration-700">
+                        <img src={item.logo} alt="" className="w-full h-full object-cover scale-150 rotate-12" />
+                    </div>
+                    
                     <img 
                       src={item.logo} 
                       alt={item.institution} 
-                      className="w-24 h-24 md:w-32 md:h-32 object-contain transition-all duration-700" 
+                      className="w-24 h-24 md:w-32 md:h-32 object-contain relative z-10 transition-transform duration-700" 
                     />
                     
-                    {/* Floating Date Tag inside the glass */}
-                    <div className="absolute bottom-6 left-1/2 -translate-x-1/2 bg-white/20 backdrop-blur-md px-4 py-1.5 rounded-full border border-white/30">
-                       <span className="text-xs font-black text-white uppercase tracking-widest">{item.date}</span>
+                    <div className="mt-6 text-center relative z-10 px-4">
+                        <span className="block text-xl font-black text-gray-900 group-hover:text-white transition-colors uppercase tracking-widest">{item.institution}</span>
+                        <span className="text-gray-400 group-hover:text-white/80 transition-colors font-bold uppercase tracking-widest text-[10px] mt-2 block">{item.date}</span>
                     </div>
                   </div>
                 </div>
               </div>
 
-              {/* Content Side */}
+              {/* Content Block - Keeping the text part you liked */}
               <div className="lg:col-span-8 space-y-6">
                 <div>
                    <h3 className="text-3xl md:text-5xl font-black text-gray-900 tracking-tight leading-tight">
