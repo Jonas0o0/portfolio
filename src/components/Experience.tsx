@@ -19,6 +19,7 @@ const projects = [
     "description": "API REST robuste pour la gestion intelligente des déchets. Authentification OAuth2 multi-fournisseurs (Google, GitHub, Discord), gestion de sessions JWT et monitoring en temps réel des capacités de collecte.",
     "language": "Java",
     "html_url": "https://github.com/edihamiti/ecodrop-api",
+    "homepage": "https://ecodrop.jonas-facon.dev/docs",
     "category": "Academic",
     "color": "from-emerald-500 to-teal-500"
   },
@@ -121,13 +122,15 @@ function ProjectItem({ project, index }: { project: any; index: number }) {
            <Badge className="bg-white/5 hover:bg-white/10 text-white border-none px-4 py-1">{project.language}</Badge>
         </div>
 
-        <div className="pt-6 flex gap-6">
+        <div className="pt-6 flex gap-8 items-center">
           <a href={project.html_url} target="_blank" className="flex items-center gap-2 text-white font-bold group/link">
              Github <ArrowRight size={18} className="group-hover/link:translate-x-2 transition-transform" />
           </a>
-          <a href="#" className="text-gray-500 hover:text-white transition-colors">
-             <ExternalLink size={20} />
-          </a>
+          {project.homepage && (
+            <a href={project.homepage} target="_blank" className="flex items-center gap-2 text-purple-400 hover:text-purple-300 font-bold group/doc transition-colors">
+               Documentation <ExternalLink size={18} className="group-hover/doc:scale-110 transition-transform" />
+            </a>
+          )}
         </div>
       </div>
     </div>
