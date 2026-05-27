@@ -15,6 +15,14 @@ const projects = [
     "color": "from-purple-500 to-indigo-500"
   },
   {
+    "name": "EcoDrop API",
+    "description": "API REST robuste pour la gestion intelligente des déchets. Authentification OAuth2 multi-fournisseurs (Google, GitHub, Discord), gestion de sessions JWT et monitoring en temps réel des capacités de collecte.",
+    "language": "Java",
+    "html_url": "https://github.com/edihamiti/ecodrop-api",
+    "category": "Academic",
+    "color": "from-emerald-500 to-teal-500"
+  },
+  {
     "name": "Dys-Parus",
     "description": "Jeu de labyrinthe expérimental en Java. Une exploration ludique de la perception et du changement de perspective à travers plusieurs niveaux évolutifs.",
     "language": "Java",
