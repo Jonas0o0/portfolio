@@ -7,16 +7,20 @@ const Education = () => {
   const educationData = [
     {
       title: "BUT Informatique",
-      institution: "IUT de Lille - Université de Lille",
-      date: "2024 - Présent",
-      description: "Formation intensive en développement logiciel, architectures web et systèmes d'information.",
+      institution: "Université de Lille",
+      campus: "IUT de Lille - Université de Lille",
+      logo: "/logos/univ.jpeg",
+      date: "Depuis 2024",
+      description: "Formation axée sur la pratique avec des matières comme :\nJava, Technologies Web (HTML, CSS, JS), Réseaux & Systèmes, Communication.",
       icon: <Award size={24} />,
     },
     {
-      title: "Baccalauréat Général",
+      title: "Baccalauréat Général - Mention Bien",
       institution: "Lycée Gustave Eiffel",
+      campus: "Lycée Gustave Eiffel, Armentières",
+      logo: "/logos/lycee.png",
       date: "2021 - 2024",
-      description: "Spécialités Mathématiques & NSI. Mention Bien.",
+      description: "Spécialités : Mathématiques et Numérique et Sciences Informatiques (NSI).\nOption : Mathématiques Expertes.\nAutres matières : Python, Anglais, Espagnol.",
       icon: <GraduationCap size={24} />,
     }
   ];
@@ -33,7 +37,7 @@ const Education = () => {
           viewport={{ once: true }}
           className="mb-20 text-center lg:text-left"
         >
-          <h2 className="text-6xl md:text-8xl font-black tracking-tighter">Éducation<span className="text-purple-500">.</span></h2>
+          <h2 className="text-6xl md:text-8xl font-black tracking-tighter text-gray-900 mb-4">Études<span className="text-purple-500">.</span></h2>
         </motion.div>
 
         <div className="space-y-24 max-w-4xl">
@@ -52,16 +56,19 @@ const Education = () => {
                 </div>
                 
                 <div className="md:w-3/4 group">
-                  <div className="flex items-center gap-4 mb-4">
-                     <div className="w-12 h-12 rounded-2xl bg-gray-900 text-white flex items-center justify-center shadow-2xl group-hover:bg-purple-600 transition-colors duration-500">
-                        {item.icon}
+                  <div className="flex items-center gap-6 mb-4">
+                     <div className="w-16 h-16 rounded-2xl bg-white p-2 flex items-center justify-center shadow-xl border border-gray-100 shrink-0 group-hover:scale-110 transition-transform duration-500">
+                        <img src={item.logo} alt={item.institution} className="w-full h-full object-contain rounded-lg" />
                      </div>
-                     <h3 className="text-3xl font-black text-gray-900 tracking-tight">{item.title}</h3>
+                     <div>
+                        <h3 className="text-3xl font-black text-gray-900 tracking-tight">{item.title}</h3>
+                        <h4 className="text-xl font-bold text-purple-600/80">{item.institution}</h4>
+                     </div>
                   </div>
                   
-                  <h4 className="text-xl font-bold text-gray-500 mb-4">{item.institution}</h4>
+                  <h5 className="text-lg font-bold text-gray-400 mb-4 uppercase tracking-widest text-xs">{item.campus}</h5>
                   
-                  <p className="text-xl text-gray-600 leading-relaxed max-w-2xl">
+                  <p className="text-xl text-gray-600 leading-relaxed max-w-2xl whitespace-pre-line">
                     {item.description}
                   </p>
                 </div>
