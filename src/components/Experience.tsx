@@ -17,8 +17,8 @@ const projects = [
   },
   {
     "name": "EcoDrop API",
-    "description": "API REST robuste pour la gestion intelligente des déchets. J'ai réalisé 50% du backend, incluant l'implémentation de l'authentification OAuth2 multi-fournisseurs (Google, GitHub, Discord) et le monitoring temps réel.",
-    // "description": "API REST robuste pour la gestion intelligente des déchets. Authentification OAuth2 multi-fournisseurs (Google, GitHub, Discord), gestion de sessions JWT et monitoring en temps réel des capacités de collecte.",
+    "description": "API REST robuste pour la gestion intelligente des déchets. J'ai réalisé 50% du backend en plus de l'implémentation complète de l'authentification OAuth2 multi-fournisseurs (Google, GitHub, Discord).",
+    // "description": "API REST robuste pour la gestion intelligente des déchets. J'ai réalisé 50% du backend, incluant l'implémentation de l'authentification OAuth2 multi-fournisseurs (Google, GitHub, Discord) et le monitoring temps réel.",
     "language": "Java",
     "html_url": "https://github.com/edihamiti/ecodrop-api",
     "homepage": "https://ecodrop.jonas-facon.dev/docs",
