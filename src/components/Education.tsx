@@ -48,29 +48,42 @@ const Education = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.8, delay: index * 0.2 }}
-              className="relative pl-12 md:pl-0"
+              className="relative pl-8 md:pl-0"
             >
-              <div className="flex flex-col md:flex-row gap-8 items-start">
+              {/* Vertical Timeline Line */}
+              <div className="absolute left-0 top-0 bottom-0 w-[2px] bg-gradient-to-b from-purple-500/50 to-transparent md:left-[24%] hidden md:block"></div>
+
+              <div className="flex flex-col md:flex-row gap-8 items-start relative">
                 <div className="md:w-1/4 pt-2">
                    <span className="text-2xl font-black text-purple-600 block">{item.date}</span>
                 </div>
                 
-                <div className="md:w-3/4 group">
-                  <div className="flex items-center gap-6 mb-4">
-                     <div className="w-16 h-16 rounded-2xl bg-white p-2 flex items-center justify-center shadow-xl border border-gray-100 shrink-0 group-hover:scale-110 transition-transform duration-500">
-                        <img src={item.logo} alt={item.institution} className="w-full h-full object-contain rounded-lg" />
+                <div className="md:w-3/4 group relative">
+                  {/* Timeline Dot */}
+                  <div className="absolute -left-[calc(2rem+1px)] top-4 w-3 h-3 rounded-full bg-purple-500 shadow-[0_0_15px_rgba(168,85,247,0.5)] hidden md:block"></div>
+
+                  <div className="flex items-center gap-6 mb-6">
+                     <div className="relative shrink-0">
+                        {/* Soft Glow behind logo */}
+                        <div className="absolute inset-0 bg-purple-200/20 blur-2xl rounded-full scale-150"></div>
+                        <img 
+                          src={item.logo} 
+                          alt={item.institution} 
+                          className="w-20 h-20 object-contain relative z-10 group-hover:scale-110 transition-transform duration-500" 
+                        />
                      </div>
                      <div>
-                        <h3 className="text-3xl font-black text-gray-900 tracking-tight">{item.title}</h3>
+                        <h3 className="text-3xl font-black text-gray-900 tracking-tight leading-tight">{item.title}</h3>
                         <h4 className="text-xl font-bold text-purple-600/80">{item.institution}</h4>
                      </div>
                   </div>
                   
-                  <h5 className="text-lg font-bold text-gray-400 mb-4 uppercase tracking-widest text-xs">{item.campus}</h5>
-                  
-                  <p className="text-xl text-gray-600 leading-relaxed max-w-2xl whitespace-pre-line">
-                    {item.description}
-                  </p>
+                  <div className="pl-0 md:pl-2">
+                    <h5 className="text-xs uppercase tracking-[0.2em] font-black text-gray-400 mb-4">{item.campus}</h5>
+                    <p className="text-xl text-gray-600 leading-relaxed max-w-2xl whitespace-pre-line border-l-2 border-purple-100 pl-6">
+                      {item.description}
+                    </p>
+                  </div>
                 </div>
               </div>
             </motion.div>
