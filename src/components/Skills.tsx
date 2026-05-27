@@ -7,8 +7,8 @@ const skills = {
     programming: [
         { name: 'Java', icon: '/logos/java-icon.svg' },
         { name: 'C#', icon: '/logos/csharp.svg' },
-        { name: 'TypeScript', icon: '/logos/typescript.svg' },
         { name: 'Python', icon: '/logos/python-logo-only.svg' },
+        { name: 'TypeScript', icon: '/logos/typescript.svg' },
         { name: 'C', icon: '/logos/C_Programming_Language.svg' },
     ],
     web: [
@@ -17,17 +17,22 @@ const skills = {
         { name: 'Angular', icon: '/logos/angular.svg' },
         { name: '.NET', icon: '/logos/dotnet.svg' },
         { name: 'Three.js', icon: '/logos/threejs.svg' },
+        { name: 'Framer Motion', icon: '/logos/framer-motion.svg' },
+        { name: 'HTML', icon: '/logos/HTML5-Logo.svg' },
+        { name: 'CSS', icon: '/logos/w3_css-official.svg' },
         { name: 'JS', icon: '/logos/javascript-seeklogo.png' },
     ],
     database: [
         { name: 'PostgreSQL', icon: '/logos/PostgreSQL_logo.3colors.svg' },
         { name: 'SQL', icon: '/logos/sqlitebrowser.png' },
+        { name: 'JDBC', icon: '/logos/java-icon.svg' },
     ],
     tools: [
         { name: 'Docker', icon: '/logos/docker-mark-blue.svg' },
         { name: 'Git', icon: '/logos/Git-Icon-1788C.svg' },
         { name: 'Dokploy', icon: '/logos/dokploy.svg' },
         { name: 'Node-RED', icon: '/logos/node-red.svg' },
+        { name: 'Mosquitto', icon: '/logos/mosquitto.svg' },
     ],
 };
 
@@ -36,13 +41,13 @@ export default function Skills() {
     hidden: { opacity: 0 },
     visible: {
       opacity: 1,
-      transition: { staggerChildren: 0.1 },
+      transition: { staggerChildren: 0.05 },
     },
   };
 
   const itemVariants = {
-    hidden: { opacity: 0, scale: 0.9 },
-    visible: { opacity: 1, scale: 1 },
+    hidden: { opacity: 0, y: 10 },
+    visible: { opacity: 1, y: 0 },
   };
 
   return (
@@ -55,7 +60,7 @@ export default function Skills() {
           <div className="h-1 w-20 bg-pink-500 rounded-full mx-auto lg:mx-0"></div>
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-x-16 gap-y-20">
           <SkillCategory title="Programmation" items={skills.programming} containerVariants={containerVariants} itemVariants={itemVariants} />
           <SkillCategory title="Web & Frameworks" items={skills.web} containerVariants={containerVariants} itemVariants={itemVariants} />
           <SkillCategory title="Bases de Données" items={skills.database} containerVariants={containerVariants} itemVariants={itemVariants} />
@@ -77,7 +82,7 @@ function SkillCategory({ title, items, containerVariants, itemVariants }: any) {
         variants={containerVariants}
         initial="hidden"
         whileInView="visible"
-        viewport={{ once: true }}
+        viewport={{ once: true, margin: "-50px" }}
         className="flex flex-wrap gap-4"
       >
         {items.map((skill: any) => (
