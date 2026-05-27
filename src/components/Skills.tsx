@@ -4,15 +4,14 @@ import SkillCard from './SkillCard';
 import { motion } from 'framer-motion';
 
 const skills = {
-    programming: [
+    languages: [
         { name: 'Java', icon: '/logos/java-icon.svg' },
         { name: 'C#', icon: '/logos/csharp.svg' },
-        { name: 'TypeScript', icon: '/logos/typescript.svg' },
         { name: 'Python', icon: '/logos/python-logo-only.svg' },
-        { name: 'C++', icon: '/logos/cpp.svg' },
         { name: 'C', icon: '/logos/C_Programming_Language.svg' },
     ],
     frontend: [
+        { name: 'TypeScript', icon: '/logos/typescript.svg' },
         { name: 'Next.js', icon: '/logos/nextjs-icon-svgrepo-com.svg' },
         { name: 'React', icon: '/logos/React-Logo.svg' },
         { name: 'Angular', icon: '/logos/angular.svg' },
@@ -68,10 +67,10 @@ export default function Skills() {
         </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-x-20 gap-y-24">
-          <SkillCategory title="Programmation & Backend" items={skills.programming} containerVariants={containerVariants} itemVariants={itemVariants} />
+          <SkillCategory title="Langages" items={skills.languages} containerVariants={containerVariants} itemVariants={itemVariants} />
           <SkillCategory title="Frontend & Design" items={skills.frontend} containerVariants={containerVariants} itemVariants={itemVariants} />
-          <SkillCategory title="Infrastructure & Data" items={skills.backend} containerVariants={containerVariants} itemVariants={itemVariants} />
-          <SkillCategory title="Outils & DevOps" items={skills.devops} containerVariants={containerVariants} itemVariants={itemVariants} />
+          <SkillCategory title="Backend & Données" items={skills.backend} containerVariants={containerVariants} itemVariants={itemVariants} />
+          <SkillCategory title="DevOps & Outils" items={skills.devops} containerVariants={containerVariants} itemVariants={itemVariants} />
         </div>
       </div>
     </section>
