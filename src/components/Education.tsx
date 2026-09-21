@@ -5,13 +5,25 @@ import { motion } from 'framer-motion';
 const Education = () => {
   const educationData = [
     {
+      title: "Licence 3 Informatique",
+      specialization: "Informatique",
+      institution: "Université de Lille",
+      campus: "Université de Lille",
+      logo: "/logos/univ.jpeg",
+      date: "Depuis 2026",
+      description: [
+        "Formation approfondie : programmation avancée (orientée objet, fonctionnelle, web), architecture des systèmes et réseaux."
+      ]
+    },
+    {
       title: "BUT Informatique",
-      specialization: "Parcours A : Réalisation d'applications",
+      specialization: "Top 5 | Parcours A : Réalisation d'applications",
       institution: "Université de Lille",
       campus: "IUT de Lille - Université de Lille",
       logo: "/logos/univ.jpeg",
-      date: "Depuis 2024",
+      date: "2024 - 2026",
       description: [
+        "Validation du DUT Informatique au terme des 2 premières années.",
         "Spécialisation 'Réalisation d'applications' axée sur l'ingénierie logicielle et la conception robuste.",
         "Maîtrise du cycle de vie logiciel : Conception OO (Java), Design Patterns et validation par tests unitaires.",
         "Développement Full-stack avec intégration de bases de données avancées (SQL) et administration réseaux.",

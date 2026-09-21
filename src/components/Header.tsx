@@ -71,7 +71,7 @@ const Header = () => {
             variants={itemVariants}
             className="text-xl md:text-2xl text-gray-500 max-w-2xl mb-10 leading-relaxed font-medium"
           >
-            Étudiant en 2ᵉ année de <span className="text-gray-900">BUT Informatique</span>. 
+            Étudiant en 3ᵉ année de <span className="text-gray-900">Licence Informatique</span>.
             Passionné par le développement et l&apos;exploration des nouvelles technologies.
           </motion.p>
 

@@ -21,7 +21,7 @@ const About = () => {
             
             <div className="space-y-6 text-lg text-gray-600 leading-relaxed">
               <p>
-                Étudiant en 2ème année de <span className="text-gray-900 font-bold">BUT Informatique</span>, je suis un créatif insatiable. Lego, couture, dessin, peinture... j&apos;ai toujours exploré pour comprendre le <span className="italic">comment</span> des choses.
+                Étudiant en 3ème année de <span className="text-gray-900 font-bold">Licence Informatique</span>, je suis un créatif insatiable. Lego, couture, dessin, peinture... j&apos;ai toujours exploré pour comprendre le <span className="italic">comment</span> des choses.
               </p>
               
               <p>
