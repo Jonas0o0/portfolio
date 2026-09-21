@@ -7,6 +7,20 @@ import { Badge } from '@/components/ui/badge';
 
 const projects = [
   {
+    "name": "Theoretical Computer",
+    "description": "Construction d'un ordinateur complet from scratch (des portes NAND jusqu'au langage de haut niveau JUMP). Approche « Double-Track » avec Logisim (conception matérielle) et Rust (émulation logicielle).",
+    "language": "Rust",
+    "html_url": "https://github.com/Jonas0o0/theoretical-computer",
+    "homepage": "https://tc.jonas-facon.dev/",
+    "category": "Personnal",
+    "color": "from-red-500 to-orange-500",
+    "images": [
+      "/images/projets/Nand-to-Game/1.png",
+      "/images/projets/Nand-to-Game/2.png",
+      "/images/projets/Nand-to-Game/3.png"
+    ]
+  },
+  {
     "name": "Portfolio 2026",
     "description": "Une vitrine numérique immersive conçue avec Next.js 15, Three.js et Framer Motion. Focus sur le storytelling et l'expérience utilisateur.",
     "language": "TypeScript",
@@ -140,7 +154,7 @@ function ProjectItem({ project, index }: { project: any; index: number }) {
                    animate={{ opacity: 1, scale: 1 }}
                    exit={{ opacity: 0, scale: 0.95 }}
                    transition={{ duration: 0.8, ease: "easeInOut" }}
-                   className="w-full h-full object-cover"
+                   className="w-full h-full object-contain"
                  />
                </AnimatePresence>
              ) : (
