@@ -13,6 +13,8 @@ const skills = {
         { name: 'JS', icon: '/logos/javascript-seeklogo.png' },
         { name: 'HTML', icon: '/logos/HTML5-Logo.svg' },
         { name: 'CSS', icon: '/logos/w3_css-official.svg' },
+        { name: 'Rust', icon: '/logos/rust.svg' },
+        { name: 'Haskell', icon: '/logos/haskell.svg' },
     ],
     frameworks: [
         { name: 'Next.js', icon: '/logos/nextjs-icon-svgrepo-com.svg' },
